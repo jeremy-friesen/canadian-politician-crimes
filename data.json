@@ -1,0 +1,3060 @@
+{
+    "version": "0.6",
+    "reqId": "0",
+    "status": "ok",
+    "sig": "2004352376",
+    "table": {
+      "cols": [
+        {
+          "id": "A",
+          "label": "Politician",
+          "type": "string"
+        },
+        {
+          "id": "B",
+          "label": "Role",
+          "type": "string"
+        },
+        {
+          "id": "C",
+          "label": "Party",
+          "type": "string"
+        },
+        {
+          "id": "D",
+          "label": "Crime",
+          "type": "string"
+        },
+        {
+          "id": "E",
+          "label": "Year of Charge/ Conviction",
+          "type": "number",
+          "pattern": "General"
+        },
+        {
+          "id": "F",
+          "label": "Province",
+          "type": "string"
+        },
+        {
+          "id": "G",
+          "label": "Time in Office",
+          "type": "string"
+        },
+        {
+          "id": "H",
+          "label": "Source",
+          "type": "string"
+        }
+      ],
+      "rows": [
+        {
+          "c": [
+            {
+              "v": "Jim Keegstra"
+            },
+            {
+              "v": "Mayor, Leader of Federal Party"
+            },
+            {
+              "v": "Social Credit Party"
+            },
+            {
+              "v": "Promotion of hatred against and identifiable group (1 Year Suspended Sentence, 1 Year Probation)"
+            },
+            {
+              "v": 1984,
+              "f": "1984"
+            },
+            {
+              "v": "AB"
+            },
+            {
+              "v": "Never Held a Seat, Leader of Party"
+            },
+            {
+              "v": "https://www.cbc.ca/news/canada/edmonton/jim-keegstra-notorious-canadian-holocaust-denier-dead-at-80-1.2674372"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Carl Benito"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Progressive Conservative Party Alberta"
+            },
+            {
+              "v": "Immigration Fraud (Fined $75,000, 2 Years House Arrest)"
+            },
+            {
+              "v": 2022,
+              "f": "2022"
+            },
+            {
+              "v": "AB"
+            },
+            {
+              "v": "2008 - 2012"
+            },
+            {
+              "v": "https://www.cbc.ca/news/canada/edmonton/former-mla-carl-benito-fined-75-000-for-immigration-fraud-1.6617783"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "John Etter Clark"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Social Credit Party of Alberta"
+            },
+            {
+              "v": "Murder (Commited Suicide Before Being Charged)"
+            },
+            {
+              "v": 1956,
+              "f": "1956"
+            },
+            {
+              "v": "AB"
+            },
+            {
+              "v": "1952 - 1956"
+            },
+            {
+              "v": "https://edmontonjournal.com/news/local-news/a-history-of-mass-murders-in-canada"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Frank Howard"
+            },
+            {
+              "v": "MP"
+            },
+            {
+              "v": "New Democratic Party / Co-operative Commonwealth Federation"
+            },
+            {
+              "v": "Armed Robbery (Sentenced to 2 Years, Served 20 Months in Prison)"
+            },
+            {
+              "v": 1943,
+              "f": "1943"
+            },
+            {
+              "v": "BC"
+            },
+            {
+              "v": "1957 - 1974, 1979 - 1986"
+            },
+            {
+              "v": "https://www.theglobeandmail.com/news/british-columbia/frank-howard-from-the-cellblock-to-centre-block/article584337/?page=all"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Svend Robinson"
+            },
+            {
+              "v": "MP"
+            },
+            {
+              "v": "New Democratic Party"
+            },
+            {
+              "v": "Theft (Discharged After Guilty Plea and Return of Property)"
+            },
+            {
+              "v": 2004,
+              "f": "2004"
+            },
+            {
+              "v": "BC"
+            },
+            {
+              "v": "1979 - 2004"
+            },
+            {
+              "v": "https://www.cbc.ca/amp/1.518412"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Robert Sommers"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "British Columbia Social Credit Party"
+            },
+            {
+              "v": "Bribery (Sentenced to 5 Years, Served 28 months in Prison)"
+            },
+            {
+              "v": 1958,
+              "f": "1958"
+            },
+            {
+              "v": "BC"
+            },
+            {
+              "v": "1952 - 1958"
+            },
+            {
+              "v": "https://decisions.scc-csc.ca/scc-csc/scc-csc/en/item/7269/index.do"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "David Stupich"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "British Columbia NDP"
+            },
+            {
+              "v": "Fraud, running an illegal lottery (Sentenced to 2 Years, Served By Electric Monitoring in daughter's Home)"
+            },
+            {
+              "v": 1999,
+              "f": "1999"
+            },
+            {
+              "v": "BC"
+            },
+            {
+              "v": "1988 - 1993"
+            },
+            {
+              "v": "https://www.llbc.leg.bc.ca/public/PubDocs/bcdocs/377231/s99_2089.txt"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Albert Planta"
+            },
+            {
+              "v": "MP, Senator"
+            },
+            {
+              "v": "Conservative"
+            },
+            {
+              "v": "Fraud (Sentenced to 2 Years)"
+            },
+            {
+              "v": 1935,
+              "f": "1935"
+            },
+            {
+              "v": "BC"
+            },
+            {
+              "v": "1917 - 1935"
+            },
+            {
+              "v": "Toronto Daily Star, 4 December 1935."
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Trevor Zinck"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Independent"
+            },
+            {
+              "v": "Fraud (Sentenced to 4 Months in Jail Followed by 1 Year Probation)"
+            },
+            {
+              "v": 2012,
+              "f": "2012"
+            },
+            {
+              "v": "BC"
+            },
+            {
+              "v": "2006 - 2013"
+            },
+            {
+              "v": "https://www.cbc.ca/news/canada/nova-scotia/trevor-zinck-held-on-to-mla-seat-until-bitter-end-1.1397453"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Gordon Campbell"
+            },
+            {
+              "v": "Premier"
+            },
+            {
+              "v": "BC Liberal Party"
+            },
+            {
+              "v": "DUI (No contest, $913 US Fine, Court Ordered Substance Abuse Program)"
+            },
+            {
+              "v": 2003,
+              "f": "2003"
+            },
+            {
+              "v": "BC"
+            },
+            {
+              "v": "2001 - 2011"
+            },
+            {
+              "v": "https://www.cbc.ca/news/world/b-c-premier-fined-for-drunk-driving-1.395741"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Robert Wilson"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Progressive Conservative Party of Manitoba"
+            },
+            {
+              "v": "Conspiracy to Import and Traffic Marijuana (Sentenced to 7 Years in Prison)"
+            },
+            {
+              "v": 1980,
+              "f": "1980"
+            },
+            {
+              "v": "MB"
+            },
+            {
+              "v": "1975 - 1981"
+            },
+            {
+              "v": "https://www.cbc.ca/news/canada/manitoba/fugitive-arrest-raises-hope-for-former-mla-1.1049108"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Wab Kinew*"
+            },
+            {
+              "v": "Premier, MLA"
+            },
+            {
+              "v": "Manitoba NDP"
+            },
+            {
+              "v": "DUI, Assault (Pardoned)"
+            },
+            {
+              "v": 2003,
+              "f": "2003"
+            },
+            {
+              "v": "MB"
+            },
+            {
+              "v": "2017 - Present"
+            },
+            {
+              "v": "https://winnipegsun.com/news/election/from-rapper-to-reporter-to-politician-a-profile-of-manitoba-ndp-leader-wab-kinew"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Vic Toews"
+            },
+            {
+              "v": "MLA, MP, Minister, Attorney General "
+            },
+            {
+              "v": "Progressive Conservative Party / Alliance"
+            },
+            {
+              "v": "Violating Manitoba's Election Finance Act, 1999 (Fined $500 dollars)"
+            },
+            {
+              "v": 2005,
+              "f": "2005"
+            },
+            {
+              "v": "MB"
+            },
+            {
+              "v": "MLA - 1995 - 1999, MP - 2000 - 2013"
+            },
+            {
+              "v": "Winnipeg Free Press, 5 February 2005"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Louis Riel"
+            },
+            {
+              "v": "MP, Leader"
+            },
+            {
+              "v": "Independent"
+            },
+            {
+              "v": "Treason (Executuion)"
+            },
+            {
+              "v": 1885,
+              "f": "1885"
+            },
+            {
+              "v": "MB"
+            },
+            {
+              "v": "MP - 1873 - 1874"
+            },
+            {
+              "v": "https://www.gov.mb.ca/chc/louis_riel/bio.html"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Mike Allen"
+            },
+            {
+              "v": "MP"
+            },
+            {
+              "v": "Conservative Party of Canada"
+            },
+            {
+              "v": "Violating Campaign Finance Law (Plead Guilty, Paid $10,000 in Fines)"
+            },
+            {
+              "v": 2018,
+              "f": "2018"
+            },
+            {
+              "v": "NB"
+            },
+            {
+              "v": "2006 - 2013"
+            },
+            {
+              "v": "https://www.cbc.ca/news/canada/new-brunswick/mike-allen-guilty-donations-political-candidates-1.5127845"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "William Andersen III"
+            },
+            {
+              "v": "MHA"
+            },
+            {
+              "v": "Liberal Party of Newfoundland and Labrador"
+            },
+            {
+              "v": "S.A. (Conditional Discharge)"
+            },
+            {
+              "v": 2007,
+              "f": "2007"
+            },
+            {
+              "v": "NL"
+            },
+            {
+              "v": "1993 - 1996"
+            },
+            {
+              "v": "https://www.cbc.ca/news/canada/newfoundland-labrador/andersen-evades-jail-for-sex-assault-1.866731"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Barry Hynes"
+            },
+            {
+              "v": "MHA"
+            },
+            {
+              "v": "Conservative Party of Newfoundland and Labrador"
+            },
+            {
+              "v": "Indecent Assault (Plead Guilty to 1 Charge of Indecent Assault, Resigned)"
+            },
+            {
+              "v": 1990,
+              "f": "1990"
+            },
+            {
+              "v": "NL"
+            },
+            {
+              "v": "1989 - 1991"
+            },
+            {
+              "v": "Edmonton Journal, 28 Nov 1990"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Wally Andersen"
+            },
+            {
+              "v": "MHA"
+            },
+            {
+              "v": "Liberal Party of Newfoundland and Labrador"
+            },
+            {
+              "v": "Fraud, Breach of Trust (15 Month Sentence, 3 Months Served)"
+            },
+            {
+              "v": 2007,
+              "f": "2007"
+            },
+            {
+              "v": "NL"
+            },
+            {
+              "v": "1996 - 2007"
+            },
+            {
+              "v": "https://www.cbc.ca/news/canada/newfoundland-labrador/wally-andersen-wins-council-seat-1.3628182"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Ed Byrne"
+            },
+            {
+              "v": "MHA "
+            },
+            {
+              "v": "Progressive Conservative Party of Newfoundland and Labrador"
+            },
+            {
+              "v": "Fraud (Sentenced to 2 Years in Prison)"
+            },
+            {
+              "v": 2009,
+              "f": "2009"
+            },
+            {
+              "v": "NL"
+            },
+            {
+              "v": "1993 - 2007"
+            },
+            {
+              "v": "https://www.cbc.ca/news/canada/newfoundland-labrador/former-n-l-minister-byrne-sentenced-to-2-year-jail-term-1.809602"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Randy Collins"
+            },
+            {
+              "v": "MHA"
+            },
+            {
+              "v": " Newfoundland and Labrador NDP"
+            },
+            {
+              "v": "Fraud (Sentenced to 21 Months in Prison)"
+            },
+            {
+              "v": 2009,
+              "f": "2009"
+            },
+            {
+              "v": "NL"
+            },
+            {
+              "v": "1997 - 2007"
+            },
+            {
+              "v": "https://www.cbc.ca/news/canada/newfoundland-labrador/collins-pleads-guilty-in-n-l-spending-scandal-1.798975"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Jim Walsh"
+            },
+            {
+              "v": "MHA"
+            },
+            {
+              "v": "Liberal Party of Newfoundland and Labrador"
+            },
+            {
+              "v": "Fraud (Sentenced to 22 Months, Full Parole Granted)"
+            },
+            {
+              "v": 2010,
+              "f": "2010"
+            },
+            {
+              "v": "NL"
+            },
+            {
+              "v": "1989 - 2009"
+            },
+            {
+              "v": "https://www.cbc.ca/news/canada/newfoundland-labrador/disgraced-n-l-politician-gets-full-parole-1.908778"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "David Rooney"
+            },
+            {
+              "v": "MP"
+            },
+            {
+              "v": "Liberal Party of Canada"
+            },
+            {
+              "v": "Defrauding the Government (Plead Guilty)"
+            },
+            {
+              "v": 1981,
+              "f": "1981"
+            },
+            {
+              "v": "NL"
+            },
+            {
+              "v": "1972 - 1984"
+            },
+            {
+              "v": "https://www.upi.com/Archives/1981/05/08/Newfoundland-Liberal-MP-David-Rooney-who-has-been-fined/6862358142400/"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Gordon H. Fitzgerald"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Progressive Conservative Party of Nova Scotia"
+            },
+            {
+              "v": "Fraud, falsifying tax returns, S.A. (Sentenced to 5 Years, Served 10 Months, Pardoned)"
+            },
+            null,
+            {
+              "v": "NS"
+            },
+            {
+              "v": "1960 - 1970"
+            },
+            {
+              "v": "Globe and Mail. February 27, 1982, "
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Dave Wilson"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Liberal Party of Nova Scotia"
+            },
+            {
+              "v": "Fraud, Breach of Trust (Sentenced to 9 Months and 18 Months Probation)"
+            },
+            {
+              "v": 2012,
+              "f": "2012"
+            },
+            {
+              "v": "NS"
+            },
+            {
+              "v": "1999 - 2010"
+            },
+            {
+              "v": "https://www.cbc.ca/news/canada/nova-scotia/ex-nova-scotia-mla-jailed-over-expenses-scandal-1.1212313"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Richard Hurlburt"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Conservative Party of Nova Scotia"
+            },
+            {
+              "v": "Fraud, Breach of Trust (12 Months House Arrest, 12 Months Probation)"
+            },
+            {
+              "v": 2012,
+              "f": "2012"
+            },
+            {
+              "v": "NS"
+            },
+            {
+              "v": "1999 - 2010"
+            },
+            {
+              "v": "https://www.cbc.ca/news/canada/nova-scotia/former-n-s-cabinet-minister-gets-house-arrest-1.1257996"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "David Joanasie"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Independent"
+            },
+            {
+              "v": "DUI (Pled Guilty, $1200 Fine)"
+            },
+            {
+              "v": 2013,
+              "f": "2013"
+            },
+            {
+              "v": "NU"
+            },
+            {
+              "v": "2013 - Present"
+            },
+            {
+              "v": "https://www.cbc.ca/news/canada/north/david-joanasie-nunavut-mla-avoids-jail-after-driving-drunk-1.2717984"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Peter Ittinuar"
+            },
+            {
+              "v": "MP"
+            },
+            {
+              "v": "Independent"
+            },
+            {
+              "v": " Assault, Cocaine Possesion (Fined)"
+            },
+            null,
+            {
+              "v": "NU"
+            },
+            {
+              "v": "1979 - 1984"
+            },
+            {
+              "v": "https://www.cbc.ca/news/canada/north/ittinuar-seriously-considering-green-party-run-1.633682"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Michael Nadli"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Independent "
+            },
+            {
+              "v": "Domestic Assault (Sentenced 6 Months Probation, Sentenced to 45 Days in Prison, Served 8)"
+            },
+            null,
+            {
+              "v": "NWT"
+            },
+            {
+              "v": "2011 - 2019"
+            },
+            {
+              "v": "https://www.cbc.ca/news/canada/north/michael-nadli-assault-jail-sentence-1.3272777"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Henry Zoe"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Independent"
+            },
+            {
+              "v": "Resisting Arrest (Fined)"
+            },
+            {
+              "v": 2005,
+              "f": "2005"
+            },
+            {
+              "v": "NWT"
+            },
+            {
+              "v": "1987 - 2005"
+            },
+            {
+              "v": "https://www.cbc.ca/nwtvotes2007/riding/007/index.html"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Louis Mathias-Auger"
+            },
+            {
+              "v": "MP"
+            },
+            {
+              "v": "Liberal / Independent"
+            },
+            {
+              "v": "Seduction (Sentenced to 2 Years in Prison)"
+            },
+            {
+              "v": 1929,
+              "f": "1929"
+            },
+            {
+              "v": "ON"
+            },
+            {
+              "v": "1926 - 1929"
+            },
+            {
+              "v": "https://muse.jhu.edu/pub/50/edited_volume/chapter/3533966"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Dean Del Mastro"
+            },
+            {
+              "v": "MP"
+            },
+            {
+              "v": "Conservative"
+            },
+            {
+              "v": "Breaking the Elections Act (Sentenced to 1 Month in Jail, 4 Months House Arrest)"
+            },
+            {
+              "v": 2008,
+              "f": "2008"
+            },
+            {
+              "v": "ON"
+            },
+            {
+              "v": "2006 - 2014"
+            },
+            {
+              "v": "https://www.ctvnews.ca/politics/jail-sentence-for-ex-harper-pointman-del-mastro-1.2439408"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Ivan Grose"
+            },
+            {
+              "v": "MP"
+            },
+            {
+              "v": "Liberal Party of Canada"
+            },
+            {
+              "v": "Armed Robbery (Served 19 Months in Jail)"
+            },
+            {
+              "v": 1957,
+              "f": "1957"
+            },
+            {
+              "v": "ON"
+            },
+            {
+              "v": "1993 - 2004"
+            },
+            {
+              "v": "https://www.theglobeandmail.com/news/national/chretien-defends-return-of-mp-to-caucus/article1046970/"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Don Meredith"
+            },
+            {
+              "v": "Senator"
+            },
+            {
+              "v": "Conservative Party"
+            },
+            {
+              "v": "Ethics violations, Resigned, Charged"
+            },
+            {
+              "v": 2017,
+              "f": "2017"
+            },
+            {
+              "v": "ON"
+            },
+            {
+              "v": "2010 - 2017"
+            },
+            {
+              "v": "https://ottawa.ctvnews.ca/former-senator-don-meredith-charged-with-sexual-assault-1.6091767"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Marwan Tabbara"
+            },
+            {
+              "v": "MP"
+            },
+            {
+              "v": "Liberal Party of Canada"
+            },
+            {
+              "v": "Assault, Unlawful Dwelling (Guilty plea, Discharged, 3 Years Probation)"
+            },
+            {
+              "v": 2021,
+              "f": "2021"
+            },
+            {
+              "v": "ON"
+            },
+            {
+              "v": "2015 - 2021"
+            },
+            {
+              "v": "https://www.cbc.ca/news/canada/kitchener-waterloo/marwan-tabbara-former-mp-kitchener-south-hespeler-1.6186793"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Thomas McGreevy"
+            },
+            {
+              "v": "MP"
+            },
+            {
+              "v": "Liberal-Conservative Party (Modern Day Conservative Party)"
+            },
+            {
+              "v": "Defrauding the Government (Sentenced to 1 Year in Prison)"
+            },
+            {
+              "v": 1891,
+              "f": "1891"
+            },
+            {
+              "v": "QC"
+            },
+            {
+              "v": "1867 - 1891"
+            },
+            {
+              "v": "https://www.biographi.ca/en/bio/mcgreevy_thomas_12E.html"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Richard Grise"
+            },
+            {
+              "v": "MP"
+            },
+            {
+              "v": "Progressive Conservative Party / Independent"
+            },
+            {
+              "v": "Fraud, corruption (1 Day in Jail, Fined $20,000 and 3 Years Probation)"
+            },
+            {
+              "v": 1990,
+              "f": "1990"
+            },
+            {
+              "v": "QC"
+            },
+            {
+              "v": "1984 - 1990"
+            },
+            {
+              "v": "https://www.ourcommons.ca/procedure/speakers-decisions/john-fraser/ch01/decision33-e.html"
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Lise Thibault"
+            },
+            {
+              "v": "Lieutenant Governor of Quebec"
+            },
+            null,
+            {
+              "v": "Fraud (Sentenced to 18 Months in Prison, ordered to pay $300,000)"
+            },
+            {
+              "v": 2007,
+              "f": "2007"
+            },
+            {
+              "v": "QC"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Manon Perreault"
+            },
+            {
+              "v": "MP"
+            },
+            {
+              "v": "New Democratic Party of Canada"
+            },
+            {
+              "v": "Public Mischief (1 Year Probation)"
+            },
+            {
+              "v": 2015,
+              "f": "2015"
+            },
+            {
+              "v": "QC"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Gilbert Chatrand"
+            },
+            {
+              "v": "MP"
+            },
+            {
+              "v": "Conservative Party of Canada / Bloc Quebecois"
+            },
+            {
+              "v": "Fraud (Sentenced to 18 Months in Prison )"
+            },
+            {
+              "v": 2005,
+              "f": "2005"
+            },
+            {
+              "v": "QC"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Andre Boisclair"
+            },
+            {
+              "v": "Leader of Party"
+            },
+            {
+              "v": "Parti Quebecois"
+            },
+            {
+              "v": "S.A. (Sentenced to 2 Years Less a Day, Parole Granted)"
+            },
+            {
+              "v": 2020,
+              "f": "2020"
+            },
+            {
+              "v": "QC"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Harold LeBel"
+            },
+            {
+              "v": "MNA"
+            },
+            {
+              "v": "Parti Quebecois"
+            },
+            {
+              "v": "S.A. (Sentenced to 8 Months in Prison, Parole Granted)"
+            },
+            {
+              "v": 2022,
+              "f": "2022"
+            },
+            {
+              "v": "QC"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Yves St-Denis"
+            },
+            {
+              "v": "MNA"
+            },
+            {
+              "v": "Quebec Liberal Party"
+            },
+            {
+              "v": "S.A. (Conditional Discharge, 50 Hours of Community Service)"
+            },
+            {
+              "v": 2019,
+              "f": "2019"
+            },
+            {
+              "v": "QC"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Fred Rose"
+            },
+            {
+              "v": "MP"
+            },
+            {
+              "v": "Labour - Progressive Party"
+            },
+            {
+              "v": "Spying for a foreign country (4 Years, 6 Months in Prison)"
+            },
+            {
+              "v": 1947,
+              "f": "1947"
+            },
+            {
+              "v": "QC"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Jack Ramsay"
+            },
+            {
+              "v": "MP"
+            },
+            {
+              "v": "Reform Party"
+            },
+            {
+              "v": "S.A. (Sentenced to 9 Months in Prison)"
+            },
+            {
+              "v": 1999,
+              "f": "1999"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Colin Thatcher"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Progressive Conservative Party of Saskatchewan"
+            },
+            {
+              "v": "Murder (Life in Prison With Eligibility of Parole After 25 Years, Parole Granted)"
+            },
+            {
+              "v": 1985,
+              "f": "1985"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Jack Goohsen"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Progressive Conservative Party of Saskatchewan "
+            },
+            {
+              "v": "Soliciting Prostitution (4 Month Conditional Sentence)"
+            },
+            {
+              "v": 1999,
+              "f": "1999"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Eric Berntson"
+            },
+            {
+              "v": "MLA, Senator"
+            },
+            {
+              "v": "Progressive Conservative Party of Saskatchewan"
+            },
+            {
+              "v": "Fraud (1 Year in Prison)"
+            },
+            {
+              "v": 1997,
+              "f": "1997"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Joan Duncan"
+            },
+            {
+              "v": "MLA, Cabinet Minister"
+            },
+            {
+              "v": "Progressive Conservative Party of Saskatchewan"
+            },
+            {
+              "v": "Fraud (Fined $5,000, and payed $12,405)"
+            },
+            {
+              "v": 1995,
+              "f": "1995"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "John Gerich"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Progressive Conservative Party of Saskatchewan"
+            },
+            {
+              "v": "Fraud (Sentenced to 2 Years in Jail, Fined $12,000)"
+            },
+            {
+              "v": 1997,
+              "f": "1997"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Michael Hopfner"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Progressive Conservative Party of Saskatchewan"
+            },
+            {
+              "v": "Fraud (Sentenced to 18 Months in Jail, $56,000 in Restitution)"
+            },
+            {
+              "v": 1997,
+              "f": "1997"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Ralph Katzman"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Progressive Conservative Party of Saskatchewan"
+            },
+            {
+              "v": "Fraud (Sentenced to 1 Year in Jail, $100,000 in Restitution)"
+            },
+            {
+              "v": 2000,
+              "f": "2000"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Lorne McLaren"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Progressive Conservative Party of Saskatchewan"
+            },
+            {
+              "v": "Fraud (Served 3 Years and 6 Months in Prison)"
+            },
+            {
+              "v": 1995,
+              "f": "1995"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Robert Lynal Andrew"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Progressive Conservative Party of Saskatchewan"
+            },
+            {
+              "v": "Fraud (Paid $4,225 in Restitution)"
+            },
+            {
+              "v": 1995,
+              "f": "1995"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Beattie Martin"
+            },
+            {
+              "v": "Cabinet Minister"
+            },
+            {
+              "v": "Progressive Conservative Party of Saskatchewan"
+            },
+            {
+              "v": "Fraud (Probation and community service, no criminal record)"
+            },
+            {
+              "v": 1995,
+              "f": "1995"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Scott Moe*"
+            },
+            {
+              "v": "Premier"
+            },
+            {
+              "v": "Saskatchewan Party"
+            },
+            {
+              "v": "DUI"
+            },
+            {
+              "v": 1992,
+              "f": "1992"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Terry Dennis"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Saskatchewan Party"
+            },
+            {
+              "v": "DUI"
+            },
+            null,
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Eric Olauson"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Saskatchewan Party"
+            },
+            {
+              "v": "DUI"
+            },
+            null,
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Don McMorris"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Saskatchewan Party"
+            },
+            {
+              "v": "DUI (1 Year Suspended License, $1820 Fine)"
+            },
+            {
+              "v": 2016,
+              "f": "2016"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Terry Jenson"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Saskatchewan Party "
+            },
+            {
+              "v": "DUI"
+            },
+            {
+              "v": 1994,
+              "f": "1994"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Harold Martens"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Progressive Conservative Party of Saskatchewan"
+            },
+            {
+              "v": "Fraud (Ordered to pay $5,850)"
+            },
+            {
+              "v": 1994,
+              "f": "1994"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Grant Hodgins"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Progressive Conservative Party of Saskatchewan"
+            },
+            {
+              "v": "Fraud (Conditional Discharge)"
+            },
+            {
+              "v": 1995,
+              "f": "1995"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Robert Randal"
+            },
+            {
+              "v": "MP of Upper Canada"
+            },
+            {
+              "v": "Independent"
+            },
+            {
+              "v": "Unpaid Debts (Jailed for 14 Years)"
+            },
+            {
+              "v": 1809,
+              "f": "1809"
+            },
+            {
+              "v": "Upper Canada"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Haakon Arntzen"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Yukon Party "
+            },
+            {
+              "v": "Indecent Assault (Appealed and Stayed)"
+            },
+            {
+              "v": 2005,
+              "f": "2005"
+            },
+            {
+              "v": "YK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Dennis Fentie"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Yukon Party 2002- 2011, NDP 1996-2002"
+            },
+            {
+              "v": "Heroin Trafficking (Pardoned)"
+            },
+            {
+              "v": 1974,
+              "f": "1974"
+            },
+            {
+              "v": "YK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Warren Steinley*"
+            },
+            {
+              "v": "MP"
+            },
+            {
+              "v": "Conservative Party of Canada"
+            },
+            {
+              "v": "DUI (Pardoned)"
+            },
+            {
+              "v": 2001,
+              "f": "2001"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Joe Fontana"
+            },
+            {
+              "v": "Mayor, MP"
+            },
+            {
+              "v": "Liberal Party of Canada"
+            },
+            {
+              "v": "Fraud, Forgery (4 Months House Arrest, 18 Months Probation) "
+            },
+            {
+              "v": 2014,
+              "f": "2014"
+            },
+            {
+              "v": "ON"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "CHARGED"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Derek Fildebrandt"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "United Conservative Party"
+            },
+            {
+              "v": "Uttering Threats to Cause Death or Bodily Harm (Ongoing)"
+            },
+            {
+              "v": 2024,
+              "f": "2024"
+            },
+            {
+              "v": "AB"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Don MacIntyre"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Wildrose / United Conservative Party"
+            },
+            {
+              "v": "Plead guilty to sexual interference (Sentenced to 3 Years in Prison)"
+            },
+            {
+              "v": 2019,
+              "f": "2019"
+            },
+            {
+              "v": "AB"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Thomas Dang"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Alberta NDP / Independent "
+            },
+            {
+              "v": "Violating Health Information Act (Fined $7,500)"
+            },
+            {
+              "v": 2022,
+              "f": "2022"
+            },
+            {
+              "v": "AB"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Mike Allen"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Independent"
+            },
+            {
+              "v": "Solicitation of prostitutes (Plead guilty to Misdemeanour)"
+            },
+            {
+              "v": 2018,
+              "f": "2018"
+            },
+            {
+              "v": "AB"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Pat Pimm"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "British Columbia Liberal Party/ Independent"
+            },
+            {
+              "v": "Assault (Stayed)"
+            },
+            {
+              "v": 2017,
+              "f": "2017"
+            },
+            {
+              "v": "BC"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Jane Thornthwaite"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "British Columbia Liberal Party"
+            },
+            {
+              "v": "DUI (Dropped, Plead Guilty to Operating a Vehichle Without Due Care)"
+            },
+            {
+              "v": 2011,
+              "f": "2011"
+            },
+            {
+              "v": "BC"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Richard Hatfield"
+            },
+            {
+              "v": "Premiere"
+            },
+            {
+              "v": "Progressive Conservative Party of New Brunswick"
+            },
+            {
+              "v": "Marijuana possesion (Aquitted)"
+            },
+            {
+              "v": 1984,
+              "f": "1984"
+            },
+            {
+              "v": "NB"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Randy Hillier"
+            },
+            {
+              "v": "MPP"
+            },
+            {
+              "v": "Ontario Conservative Party / Independent"
+            },
+            {
+              "v": "Mischief, assaulting a peace officer (Ongoing)"
+            },
+            {
+              "v": 2023,
+              "f": "2023"
+            },
+            {
+              "v": "ON"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "John Snobelen"
+            },
+            {
+              "v": "Cabinet Minister "
+            },
+            {
+              "v": "Progressive Conservative Party of Ontario"
+            },
+            {
+              "v": "Possesion of unregistered handgun (Discharged)"
+            },
+            {
+              "v": 2007,
+              "f": "2007"
+            },
+            {
+              "v": "ON"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Mike Davidson"
+            },
+            {
+              "v": "MPP"
+            },
+            {
+              "v": "NDP of Ontario"
+            },
+            {
+              "v": "Harrasment (Discharged)"
+            },
+            {
+              "v": 2004,
+              "f": "2004"
+            },
+            {
+              "v": "ON"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Mike Currie"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Conservative Party of Prince Edward Island"
+            },
+            {
+              "v": "Assault (Granted Absolute Discharge)"
+            },
+            {
+              "v": 2010,
+              "f": "2010"
+            },
+            {
+              "v": "PEI"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Romeo Saganash "
+            },
+            {
+              "v": "MP"
+            },
+            {
+              "v": "New Democratic Party of Canada"
+            },
+            {
+              "v": "S.A. (Ongoing)"
+            },
+            {
+              "v": 2023,
+              "f": "2023"
+            },
+            {
+              "v": "QC"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Pablo Rodriguez *"
+            },
+            {
+              "v": "MP, Minister"
+            },
+            {
+              "v": "Liberal Party of Canada / Independent"
+            },
+            {
+              "v": "Dissobeying a Police Officer (Dropped)"
+            },
+            {
+              "v": 2010,
+              "f": "2010"
+            },
+            {
+              "v": "QC"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Ryan Domotor"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Saskatchewan Party"
+            },
+            {
+              "v": "Solicitation of prostitutes (Stayed)"
+            },
+            {
+              "v": 2024,
+              "f": "2024"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Greg Lawrence"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Saskatchewan Party"
+            },
+            {
+              "v": "Assault (Ongoing)"
+            },
+            {
+              "v": 2024,
+              "f": "2024"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Nadine Wilson *"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Saskatchewan Party / Saskatchewan United Party"
+            },
+            {
+              "v": "Common assault (Withdrawn)"
+            },
+            {
+              "v": 2019,
+              "f": "2019"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Sherwin Petersen"
+            },
+            {
+              "v": "MLA"
+            },
+            {
+              "v": "Progressive Conservative Party of Saskatchewan"
+            },
+            {
+              "v": "Fraud (Discharged and fined)"
+            },
+            {
+              "v": 1995,
+              "f": "1995"
+            },
+            {
+              "v": "SK"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Rob Anders"
+            },
+            {
+              "v": "MP"
+            },
+            {
+              "v": "Conservative Party of Canada"
+            },
+            {
+              "v": "Tax evasion (Charges Stayed)"
+            },
+            {
+              "v": 2020,
+              "f": "2020"
+            },
+            {
+              "v": "AB"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Steven Guilbeault *"
+            },
+            {
+              "v": "MP, Minister"
+            },
+            {
+              "v": "Liberal Party of Canada "
+            },
+            {
+              "v": "Mischief (Discharged and fined)"
+            },
+            {
+              "v": 2001,
+              "f": "2001"
+            },
+            {
+              "v": "QC"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Elizabeth May *"
+            },
+            {
+              "v": "MP, Leader of Party "
+            },
+            {
+              "v": "Green Party of Canada"
+            },
+            {
+              "v": "Criminal Contempt in Protest (Fined) NOT A CONVICTED CRIMINAL"
+            },
+            {
+              "v": 2018,
+              "f": "2018"
+            },
+            {
+              "v": "BC"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": 2021,
+              "f": "2021"
+            },
+            {
+              "v": "BC"
+            },
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Conservative "
+            },
+            {
+              "v": "46"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Liberal"
+            },
+            {
+              "v": "12"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "NDP"
+            },
+            {
+              "v": "9"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Green"
+            },
+            {
+              "v": "2"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Independent"
+            },
+            {
+              "v": "7"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Bloc"
+            },
+            {
+              "v": "1"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Partis Quebecois"
+            },
+            {
+              "v": "2"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Labour / Communist"
+            },
+            {
+              "v": "1"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Alberta"
+            },
+            {
+              "v": "7"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "British Columbia"
+            },
+            {
+              "v": "10"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Manitoba"
+            },
+            {
+              "v": "4"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "New Brunswick"
+            },
+            {
+              "v": "2"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Newfoundland and Labrador"
+            },
+            {
+              "v": "7"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Nova Scotia"
+            },
+            {
+              "v": "3"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Nunavut"
+            },
+            {
+              "v": "2"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "North West Territories"
+            },
+            {
+              "v": "2"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Ontario"
+            },
+            {
+              "v": "8"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Prince Edward Island"
+            },
+            {
+              "v": "1"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Quebec"
+            },
+            {
+              "v": "12"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Saskatchewan"
+            },
+            {
+              "v": "24"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Yukon"
+            },
+            {
+              "v": "2"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Robbery/Theft"
+            },
+            {
+              "v": "3"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Fraud"
+            },
+            {
+              "v": "33"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Murder"
+            },
+            {
+              "v": "2"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Sex Crimes"
+            },
+            {
+              "v": "13"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "DUI"
+            },
+            {
+              "v": "10"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Treason / Espionage"
+            },
+            {
+              "v": "2"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Assault"
+            },
+            {
+              "v": "5"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Mischief"
+            },
+            {
+              "v": "2"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Contempt"
+            },
+            {
+              "v": "4"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Hate Crime"
+            },
+            {
+              "v": "1"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Threats"
+            },
+            {
+              "v": "1"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        },
+        {
+          "c": [
+            {
+              "v": "Drugs"
+            },
+            {
+              "v": "4"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "v": null
+            }
+          ]
+        }
+      ],
+      "parsedNumHeaders": 2
+    }
+  }

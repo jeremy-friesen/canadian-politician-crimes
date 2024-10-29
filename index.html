@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canadian Politicians Crimes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            cursor: pointer;
+        }
+
+        th:hover {
+            background-color: #f0f0f0;
+            /* subtle hover effect */
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .attribution {
+            margin-top: 20px;
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        .attribution a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .attribution a:hover {
+            text-decoration: underline;
+        }
+
+        #search {
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            display: block;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .sort-indicator {
+            margin-left: 5px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Crimes by Canadian Politicians</h1>
+    <div class="attribution">
+        <p>
+            <a href="https://www.tiktok.com/@jonnylegato5/video/7430545507333721349?is_from_webapp=1&sender_device=pc&web_id=7430988187822900741"
+                target="_blank">Source</a> | <a
+                href="https://docs.google.com/spreadsheets/d/1gof45QUi2p0f8YVaKa2fOgtIUBElSueh/htmlview"
+                target="_blank">Data</a>
+        </p>
+    </div>
+    <input type="text" id="search" placeholder="Search..." onkeyup="filterTable()">
+    <table id="data-table">
+        <thead>
+            <tr id="header-row"></tr>
+        </thead>
+        <tbody id="data-body"></tbody>
+    </table>
+
+    <script>
+        const sheetId = '1gof45QUi2p0f8YVaKa2fOgtIUBElSueh'; // Replace with your actual sheet ID
+        const baseUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
+
+        const partyColors = {
+            "Social Credit Party": "#C9DAF8",
+            "Progressive Conservative Party Alberta": "#83CAEB",
+            "Social Credit Party of Alberta": "#C9DAF8",
+            "New Democratic Party / Co-operative Commonwealth Federation": "#F6B26B",
+            "New Democratic Party": "#F6B26B",
+            "British Columbia Social Credit Party": "#83CAEB",
+            "British Columbia NDP": "#F6B26B",
+            "Conservative": "#83CAEB",
+            "Independent": "#cecccc",
+            "BC Liberal Party": "#83CAEB",
+            "Progressive Conservative Party of Manitoba": "#83CAEB",
+            "Manitoba NDP": "#F6B26B",
+            "Progressive Conservative Party / Alliance": "#83CAEB",
+            "Conservative Party of Canada": "#83CAEB",
+            "Liberal Party of Newfoundland and Labrador": "#F4CCCC",
+            "Conservative Party of Newfoundland and Labrador": "#83CAEB",
+            "Newfoundland and Labrador NDP": "#F6B26B",
+            "Progressive Conservative Party of Newfoundland and Labrador": "#83CAEB",
+            "Liberal Party of Canada": "#F4CCCC",
+            "Progressive Conservative Party of Nova Scotia": "#83CAEB",
+            "Liberal Party of Nova Scotia": "#F4CCCC",
+            "Conservative Party of Nova Scotia": "#83CAEB",
+            "Liberal / Independent": "#D52B1E",
+            "Liberal-Conservative Party (Modern Day Conservative Party)": "#83CAEB",
+            "New Democratic Party of Canada": "#BF4A4B",
+            "Conservative Party of Canada / Bloc Quebecois": "#003B5C",
+            "Parti Quebecois": "#D76DCC",
+            "Quebec Liberal Party": "#F4CCCC",
+            "Labour - Progressive Party": "#BF4A4B",
+            "Reform Party": "#83CAEB",
+            "Progressive Conservative Party of Saskatchewan": "#83CAEB",
+            "Saskatchewan Party": "#83CAEB",
+            "Yukon Party": "#83CAEB",
+            "Green Party of Canada": "#4B8E4D",
+            "Conservative Party": "#83CAEB",
+            "Progressive Conservative Party / Independent": "#83CAEB"
+        };
+        
+        fetch(baseUrl)
+            .then(response => response.text())
+            .then(data => {
+                const jsonData = JSON.parse(data.substr(47).slice(0, -2)); // Remove the padding
+                const cols = jsonData.table.cols;
+                const rows = jsonData.table.rows;
+
+                // Populate headers
+                cols.forEach((col, index) => {
+                    const th = document.createElement('th');
+                    th.textContent = col.label;
+                    th.onclick = () => sortTable(index, th);
+                    document.getElementById('header-row').appendChild(th);
+                });
+
+                // Populate rows
+                rows.forEach(row => {
+                    const tr = document.createElement('tr');
+
+                    if (row.c[2])
+                        console.log(row.c[2].v)
+
+                    if (row.c[0] == null || row.c[0].v === "" || row.c[3] == null || row.c[3].v === "") {
+                        return;
+                    }
+
+                    row.c.forEach((cell, index) => {
+                        const td = document.createElement('td');
+
+                        // Get the party name
+                        const partyName = row.c[2] ? row.c[2].v.trim() : "";
+
+                        // Set the background color based on the partyColors dictionary
+                        const color = partyColors[partyName] || "#FFFFFF"; // Default to white if not found
+                        
+                        // col 7 is source
+                        if (index === 7 && cell.v != null && (cell.v.includes('http://') || cell.v.includes('https://'))) {
+                            var siteName = cell.v
+                            siteName = siteName.replace('https://', '')
+                            .replace('http://', '')
+                            .split('/')[0];
+                            const link = document.createElement('a');
+                            link.href = cell.v;
+                            link.target = "_blank";
+                            link.textContent = siteName;
+                            //.charAt(0).toUpperCase() + siteName.slice(1); // Capitalize the first letter
+                            td.appendChild(link);
+                            
+                        } else {
+                            td.textContent = cell ? cell.v : '';
+                        }
+                        tr.appendChild(td);
+                        tr.style.backgroundColor = color;
+                    });
+                    document.getElementById('data-body').appendChild(tr);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+
+        function filterTable() {
+            const input = document.getElementById('search');
+            const filter = input.value.toLowerCase();
+            const rows = document.querySelectorAll('#data-body tr');
+
+            rows.forEach(row => {
+                const cells = row.getElementsByTagName('td');
+                let rowVisible = false;
+
+                for (let i = 0; i < cells.length; i++) {
+                    if (cells[i].textContent.toLowerCase().includes(filter)) {
+                        rowVisible = true;
+                        break;
+                    }
+                }
+
+                row.style.display = rowVisible ? '' : 'none';
+            });
+        }
+
+        function sortTable(colIndex, th) {
+            const table = document.getElementById('data-table');
+            const tbody = document.getElementById('data-body');
+            const rows = Array.from(tbody.rows);
+            const isAscending = table.dataset.sortOrder === 'asc';
+            const isDescending = table.dataset.sortOrder === 'desc';
+
+            // Remove previous indicators
+            Array.from(th.parentNode.children).forEach(header => {
+                header.innerHTML = header.textContent; // Reset header text
+            });
+
+            // Sort rows
+            rows.sort((a, b) => {
+                const aText = a.cells[colIndex].textContent;
+                const bText = b.cells[colIndex].textContent;
+
+                return isAscending ? aText.localeCompare(bText) : bText.localeCompare(aText);
+            });
+
+            // Clear the tbody and re-append sorted rows
+            tbody.innerHTML = '';
+            rows.forEach(row => tbody.appendChild(row));
+
+            // Update sort order
+            if (isAscending) {
+                th.innerHTML += ' &#9650;'; // Up arrow for ascending
+                table.dataset.sortOrder = 'desc';
+            } else if (isDescending) {
+                th.innerHTML += ' &#9660;'; // Down arrow for descending
+                table.dataset.sortOrder = '';
+            } else {
+                th.innerHTML += ' &#9650;'; // Up arrow for ascending
+                table.dataset.sortOrder = 'asc';
+            }
+        }
+    </script>
+</body>
+
+</html>
