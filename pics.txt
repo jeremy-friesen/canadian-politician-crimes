@@ -48,8 +48,8 @@ Manon Perreault,Manon-Perreault.jpg,https://www.ourcommons.ca/members/en/manon-p
 Marwan Tabbara,Marwan-Tabbara.jpeg,https://en.wikipedia.org/wiki/Marwan_Tabbara
 Michael Hopfner,,
 Michael Nadli,Michael-Nadli.jpg,https://ntassembly.libguides.com/members/18th-deh-cho
-Mike Allen,Mike-Allen.avif,https://www.cbc.ca/news/canada/edmonton/fort-mcmurray-mike-allen-pc-mla-council-election-1.4295779
-Mike Currie,Mike-Currie.avif,https://www.cbc.ca/news/canada/prince-edward-island/currie-to-run-in-cardigan-1.1102299
+Mike Allen,Mike-Allen.jpg,https://www.cbc.ca/news/canada/edmonton/fort-mcmurray-mike-allen-pc-mla-council-election-1.4295779
+Mike Currie,Mike-Currie.jpg,https://www.cbc.ca/news/canada/prince-edward-island/currie-to-run-in-cardigan-1.1102299
 Mike Davidson,Mike-Davidson.jpg,https://www.ola.org/en/members/all/michael-norman-davison
 Nadine Wilson *,Nadine-Wilson.png,https://en.wikipedia.org/wiki/Nadine_Wilson
 Pablo Rodriguez *,Pablo-Rodriguez.jpg,https://en.wikipedia.org/wiki/Pablo_Rodriguez_(Canadian_politician)
