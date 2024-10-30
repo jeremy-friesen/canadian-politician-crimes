@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Canadian Politicians Crimes</title>
     <style>
         body {
@@ -19,14 +20,23 @@
             margin-bottom: 20px;
         }
 
+        /* .table-container {
+            overflow-x: auto;
+            /* Allow horizontal scrolling for the table */
+        /* Prevent the table from exceeding the viewport width */
+        /* }  */
+
         table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+            border-radius: 5px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             background-color: white;
-            border-radius: 5px;
-            overflow: hidden;
+            max-width: 100%-10px;
+            /* width: 100%-10px; */
+            border-collapse: collapse;
+            /* margin-top: 20px; */
+
+
+            overflow: auto;
         }
 
         th,
@@ -80,6 +90,28 @@
             margin-left: 5px;
             font-size: 0.8em;
         }
+
+        canvas {
+            margin-top: 40px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        img {
+            max-width: 150px;
+            /* Set the maximum width */
+            max-height: 100px;
+            /* Set the maximum height */
+            /*height: auto; /* Maintain aspect ratio */
+            height: 100px;
+            width: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            /* Maintain aspect ratio */
+        }
     </style>
 </head>
 
@@ -90,60 +122,69 @@
             <a href="https://www.tiktok.com/@jonnylegato5/video/7430545507333721349?is_from_webapp=1&sender_device=pc&web_id=7430988187822900741"
                 target="_blank">Source</a> | <a
                 href="https://docs.google.com/spreadsheets/d/1gof45QUi2p0f8YVaKa2fOgtIUBElSueh/htmlview"
-                target="_blank">Data</a>
+                target="_blank">Data</a> | <a href="https://github.com/jeremy-friesen/can-pol-crimes">GitHub</a>
         </p>
     </div>
     <input type="text" id="search" placeholder="Search..." onkeyup="filterTable()">
-    <table id="data-table">
-        <thead>
-            <tr id="header-row"></tr>
-        </thead>
-        <tbody id="data-body"></tbody>
-    </table>
+    <div class="table-container">
+        <table id="data-table">
+            <thead>
+                <tr id="header-row"></tr>
+            </thead>
+            <tbody id="data-body"></tbody>
+        </table>
+    </div>
+
+    <canvas id="provinceChart" width="400" height="200"></canvas>
 
     <script>
         const sheetId = '1gof45QUi2p0f8YVaKa2fOgtIUBElSueh'; // Replace with your actual sheet ID
         const baseUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
 
-        const partyColors = {
-            "Social Credit Party": "#C9DAF8",
-            "Progressive Conservative Party Alberta": "#83CAEB",
-            "Social Credit Party of Alberta": "#C9DAF8",
-            "New Democratic Party / Co-operative Commonwealth Federation": "#F6B26B",
-            "New Democratic Party": "#F6B26B",
-            "British Columbia Social Credit Party": "#83CAEB",
-            "British Columbia NDP": "#F6B26B",
-            "Conservative": "#83CAEB",
-            "Independent": "#cecccc",
-            "BC Liberal Party": "#83CAEB",
-            "Progressive Conservative Party of Manitoba": "#83CAEB",
-            "Manitoba NDP": "#F6B26B",
-            "Progressive Conservative Party / Alliance": "#83CAEB",
-            "Conservative Party of Canada": "#83CAEB",
-            "Liberal Party of Newfoundland and Labrador": "#F4CCCC",
-            "Conservative Party of Newfoundland and Labrador": "#83CAEB",
-            "Newfoundland and Labrador NDP": "#F6B26B",
-            "Progressive Conservative Party of Newfoundland and Labrador": "#83CAEB",
-            "Liberal Party of Canada": "#F4CCCC",
-            "Progressive Conservative Party of Nova Scotia": "#83CAEB",
-            "Liberal Party of Nova Scotia": "#F4CCCC",
-            "Conservative Party of Nova Scotia": "#83CAEB",
-            "Liberal / Independent": "#D52B1E",
-            "Liberal-Conservative Party (Modern Day Conservative Party)": "#83CAEB",
-            "New Democratic Party of Canada": "#BF4A4B",
-            "Conservative Party of Canada / Bloc Quebecois": "#003B5C",
-            "Parti Quebecois": "#D76DCC",
-            "Quebec Liberal Party": "#F4CCCC",
-            "Labour - Progressive Party": "#BF4A4B",
-            "Reform Party": "#83CAEB",
-            "Progressive Conservative Party of Saskatchewan": "#83CAEB",
-            "Saskatchewan Party": "#83CAEB",
-            "Yukon Party": "#83CAEB",
-            "Green Party of Canada": "#4B8E4D",
-            "Conservative Party": "#83CAEB",
-            "Progressive Conservative Party / Independent": "#83CAEB"
-        };
-        
+        var partyColours = {};
+        var politicians = {};
+        var pics = {};
+
+        // Function to load the pics.txt file
+        fetch('pics.txt')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                const rows = data.split('\n');
+                // const tableBody = document.querySelector('#pics-table tbody');
+
+                rows.forEach(row => {
+                    if (row.trim()) {
+                        const columns = row.split(',');
+                        pics[columns[0]] = "pics/" + columns[1]
+                        // tableBody.appendChild(newRow);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+
+
+        fetch("party-colours.json")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                partyColours = data;
+                console.log(partyColours);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation for party colours:', error);
+            });
+
         fetch(baseUrl)
             .then(response => response.text())
             .then(data => {
@@ -170,38 +211,59 @@
                         return;
                     }
 
+                    var politician = {}
                     row.c.forEach((cell, index) => {
                         const td = document.createElement('td');
+
+                        if (cell)
+                            politician[cols[index].label] = cell.v
 
                         // Get the party name
                         const partyName = row.c[2] ? row.c[2].v.trim() : "";
 
-                        // Set the background color based on the partyColors dictionary
-                        const color = partyColors[partyName] || "#FFFFFF"; // Default to white if not found
-                        
+                        // Set the background color based on the partyColours dictionary
+                        const color = partyColours[partyName] || "#FFFFFF"; // Default to white if not found
+
                         // col 7 is source
                         if (index === 7 && cell.v != null && (cell.v.includes('http://') || cell.v.includes('https://'))) {
                             var siteName = cell.v
                             siteName = siteName.replace('https://', '')
-                            .replace('http://', '')
-                            .split('/')[0];
+                                .replace('http://', '')
+                                .split('/')[0];
                             const link = document.createElement('a');
                             link.href = cell.v;
                             link.target = "_blank";
                             link.textContent = siteName;
                             //.charAt(0).toUpperCase() + siteName.slice(1); // Capitalize the first letter
                             td.appendChild(link);
-                            
-                        } else {
+
+                        }
+                        // If it's the last column, add an image
+                        else if (index === 0 && row.c[0] && pics[row.c[0].v]) {
+                            // const imgCell = document.createElement('td');
+                            const img = document.createElement('img');
+                            img.src = pics[row.c[0].v].trim();
+                            td.textContent = cell ? cell.v : '';
+                            td.appendChild(document.createElement('br'));
+                            td.appendChild(img);
+                            // newRow.appendChild(imgCell);
+                        }
+                        else {
                             td.textContent = cell ? cell.v : '';
                         }
                         tr.appendChild(td);
                         tr.style.backgroundColor = color;
                     });
+                    politicians[row.c[0].v] = politician
                     document.getElementById('data-body').appendChild(tr);
                 });
+
+                createProvinceChart(politicians);
             })
             .catch(error => console.error('Error fetching data:', error));
+
+        console.log(politicians)
+
 
         function filterTable() {
             const input = document.getElementById('search');
@@ -259,7 +321,78 @@
                 table.dataset.sortOrder = 'asc';
             }
         }
+
+        // Function to create the chart
+        function createProvinceChart(data) {
+            const provinceCounts = {};
+
+            console.log('creating province chart');
+
+            // Count crimes by province
+            for (const politician in data) {
+                const province = data[politician].Province;
+                provinceCounts[province] = (provinceCounts[province] || 0) + 1;
+            }
+
+            const sortedProvinces = Object.entries(provinceCounts)
+                .sort((a, b) => b[1] - a[1]); // Sort in descending order
+
+            const provinces = sortedProvinces.map(entry => entry[0]);
+            const counts = sortedProvinces.map(entry => entry[1]);
+
+            const ctx = document.getElementById('provinceChart').getContext('2d');
+            const provinceChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: provinces,
+                    datasets: [{
+                        label: 'Number of Crimes',
+                        data: counts,
+                        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                        },
+                        title: {
+                            display: true,
+                            text: 'Crimes by Province or Territory',
+                            font: {
+                                size: 20
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Crimes'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Province'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Call the function to create the chart after fetching the data
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     createProvinceChart(politicians);
+        // });
+        // createProvinceChart(politicians);
     </script>
+
 </body>
 
 </html>
