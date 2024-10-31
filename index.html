@@ -211,7 +211,10 @@
         fetch(baseUrl)
             .then(response => response.text())
             .then(data => {
-                const jsonData = JSON.parse(data.substr(47).slice(0, -2)); // Remove the padding
+                const jsonData = JSON.parse(
+                    data.substr(47).slice(0, -2)
+                    .replace('Yellow = In Office', '')
+                );
                 const cols = jsonData.table.cols;
                 const rows = jsonData.table.rows;
 
