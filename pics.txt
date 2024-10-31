@@ -1,6 +1,5 @@
 Albert Planta,Albert-Planta.jpg,https://lop.parl.ca/sites/ParlInfo/default/en_CA/People/Profile?personId=2591 
 Andre Boisclair,Andre-Boisclair.jpg,https://en.wikipedia.org/wiki/Andr%C3%A9_Boisclair
-Barry Hynes,,
 Beattie Martin,Beattie-Martin.jpg,https://en.wikipedia.org/wiki/Gordon_Beattie_Martin
 Carl Benito,Carl-Benito.jpg,https://www.cbc.ca/news/canada/edmonton/former-mla-carl-benito-fined-75-000-for-immigration-fraud-1.6617783
 Colin Thatcher,Colin-Thatcher.jpg,https://www.ctvnews.ca/mobile/ex-wife-killer-colin-thatcher-married-again-parole-board-1.508872?cache=yesclipId10406200text/html;charset=utf-80404/7.258454/7.355709
@@ -28,7 +27,6 @@ Greg Lawrence,Greg-Lawrence.jpg,https://www.moosejawtoday.com/local-news/greg-la
 Haakon Arntzen,Haakon-Arntzen.jpg,https://equitablevote.textstyle.ca/index.php?lang=1&sec=peo&pg=fp&profid=7149
 Harold LeBel,Harold-LeBel.aspx,https://www.assnat.qc.ca/en/deputes/lebel-harold-15479/coordonnees.html
 Harold Martens,Harold-Martens.jpg,https://www.swiftcurrentfuneralhome.com/obituary/Harold-Martens
-Henry Zoe,,
 Ivan Grose,Ivan-Grose.jpg,https://lop.parl.ca/sites/ParlInfo/default/en_CA/People/Profile?personId=12282
 Jack Goohsen,Jack-Goohsen.jpg,https://equitablevote.textstyle.ca/?lang=1&sec=peo&pg=fp&profid=3550
 Jack Ramsay,Jack-Ramsay.jpg,https://lop.parl.ca/sites/ParlInfo/default/en_CA/People/Profile?personId=5879
@@ -46,7 +44,6 @@ Louis Mathias-Auger,Louis-Mathias-Auger.jpg,https://www.thecanadianencyclopedia.
 Louis Riel,Louis-Riel.jpg,https://www.thecanadianencyclopedia.ca/en/article/louis-riel
 Manon Perreault,Manon-Perreault.jpg,https://www.ourcommons.ca/members/en/manon-perreault(71471)/roles
 Marwan Tabbara,Marwan-Tabbara.jpeg,https://en.wikipedia.org/wiki/Marwan_Tabbara
-Michael Hopfner,,
 Michael Nadli,Michael-Nadli.jpg,https://ntassembly.libguides.com/members/18th-deh-cho
 Mike Allen,Mike-Allen.jpg,https://www.cbc.ca/news/canada/edmonton/fort-mcmurray-mike-allen-pc-mla-council-election-1.4295779
 Mike Currie,Mike-Currie.jpg,https://www.cbc.ca/news/canada/prince-edward-island/currie-to-run-in-cardigan-1.1102299
@@ -62,14 +59,11 @@ Richard Grise,Richard-Grise.jpg,https://bdp.parl.ca/sites/ParlInfo/default/en_CA
 Richard Hatfield,Richard-Hatfield.jpg,https://en.wikipedia.org/wiki/Richard_Hatfield
 Richard Hurlburt,Richard-Hurlburt.jpg,https://nslegislature.ca/members/profiles/richard-hurlburt/history
 Rob Anders,Rob-Anders.jpg,https://en.wikipedia.org/wiki/Rob_Anders
-Robert Lynal Andrew,, 
-Robert Randal,,
 Robert Sommers,Robert-Sommers.jpg,https://www.evergreenalliance.ca/action-groups/forest-hall-of-shame/
 Robert Wilson,Robert-Wilson.jpg,https://www.facebook.com/photo/?fbid=280337264192990&set=pb.100066501546755.-2207520000
 Romeo Saganash ,Romeo-Saganash.jpg,https://en.wikipedia.org/wiki/Romeo_Saganash
 Ryan Domotor,Ryan-Domotor.webp,https://leaderpost.com/news/politics/with-sex-solicitation-charge-stayed-mla-domotor-says-i-regret-what-i-tried-to-do
 Scott Moe*,Scott-Moe.jpg,https://www.saskatchewan.ca/government/government-structure/cabinet/honourable-scott-moe
-Sherwin Petersen,,
 Steven Guilbeault *,Steven-Guilbeault.jpg,https://www.ourcommons.ca/members/en/steven-guilbeault(14171)
 Svend Robinson,Svend-Robinson.jpg,https://en.wikipedia.org/wiki/Svend_Robinson
 Terry Dennis,Terry-Dennis.jpeg,https://www.legassembly.sk.ca/mlas/member-details?first=Terry&last=Dennis#
@@ -78,7 +72,7 @@ Thomas Dang,Thomas-Dang.jpg,https://en.wikipedia.org/wiki/Thomas_Dang
 Thomas McGreevy,Thomas-McGreevy.jpg,https://en.wikipedia.org/wiki/Thomas_McGreevy
 Trevor Zinck,Trevor-Zinck.jpg,https://www.cbc.ca/news/canada/nova-scotia/trevor-zinck-missing-found-1.4608986
 Vic Toews,Vic-Toews.jpg,https://en.wikipedia.org/wiki/Vic_Toews
-Wab Kinew*,Wab-Kinew.jpg,https://en.wikipedia.org/wiki/Wab_Kinew
+Wab Kinew,Wab-Kinew.jpg,https://en.wikipedia.org/wiki/Wab_Kinew
 Wally Andersen,Wally-Andersen.png,https://nunatsiavut.com/government/elected-officials/
 Warren Steinley*,Warren-Steinley.jpg,https://www.ourcommons.ca/members/en/warren-steinley(105581)
 William Andersen III,William-Andersen-III.webp,https://turtletalk.blog/2011/04/27/sexual-assault-conviction-of-former-president-of-nunatsiavut-government-upheld-sentence-increased/

@@ -194,6 +194,20 @@
                 console.error('There was a problem with the fetch operation for party colours:', error);
             });
 
+        function getPartyColours(partyText){
+            var keys = Object.keys(partyColours);
+            var pColours = [];
+            var t = partyText
+            for (let i = 0; i < keys.length; i++) {
+                const k = keys[i];
+                if(t.includes(k) && !(k=="Independent" && pColours.length > 0)){
+                    pColours.push(partyColours[k]);
+                    t = t.replace(k,'')
+                }
+            }
+            return pColours;
+        }
+
         fetch(baseUrl)
             .then(response => response.text())
             .then(data => {
@@ -230,8 +244,9 @@
                         // Get the party name
                         const partyName = row.c[2] ? row.c[2].v.trim() : "";
 
+                        const pColours = getPartyColours(partyName)
                         // Set the background color based on the partyColours dictionary
-                        const color = partyColours[partyName] || "#FFFFFF"; // Default to white if not found
+                        const color = pColours[pColours.length - 1] || "#cecccc"; // Default to white if not found
 
                         // col 7 is source
                         if (index === 7 && cell.v != null && (cell.v.includes('http://') || cell.v.includes('https://'))) {
@@ -247,11 +262,23 @@
                             td.appendChild(link);
 
                         }
-                        // If it's the last column, add an image
-                        else if (index === 0 && row.c[0] && pics[row.c[0].v]) {
+                        else if (index === 3){
+                            td.style.fontWeight = "bold";
+                            td.textContent = cell ? cell.v : '';
+                        }
+                        else if (index === 2){
+                            td.style.backgroundColor = color;
+                            td.textContent = cell ? cell.v : '';
+                        }
+                        else if (index === 0 && row.c[0]) {
                             // const imgCell = document.createElement('td');
                             const img = document.createElement('img');
-                            img.src = pics[row.c[0].v].trim();
+                            if (pics[row.c[0].v]){
+                                img.src = pics[row.c[0].v].trim();
+                            }
+                            else {
+                                img.src = 'pics/no-image.jpg';
+                            }
                             td.className = 'first-column';
                             td.textContent = cell ? cell.v : '';
                             td.appendChild(document.createElement('br'));
@@ -262,7 +289,8 @@
                             td.textContent = cell ? cell.v : '';
                         }
                         tr.appendChild(td);
-                        tr.style.backgroundColor = color;
+                        // whole row party colour
+                        // tr.style.backgroundColor = color;
                     });
                     politicians[row.c[0].v] = politician
                     document.getElementById('data-body').appendChild(tr);
