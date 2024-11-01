@@ -14,7 +14,7 @@ Don MacIntyre,Don-MacIntyre.jpg,https://en.wikipedia.org/wiki/Don_MacIntyre
 Don McMorris,Don-McMorris.jpg,https://www.saskatchewan.ca/government/government-structure/cabinet/honourable-don-mcmorris
 Don Meredith,Don-Meredith.jpg,https://en.wikipedia.org/wiki/Don_Meredith_(politician)
 Ed Byrne,Ed-Byrne.avif,https://www.cbc.ca/news/canada/newfoundland-labrador/n-l-politician-in-spending-scandal-quits-politics-1.577997
-Elizabeth May *,Elizabeth-May.jpg,https://www.ourcommons.ca/members/en/elizabeth-may(2897)
+Elizabeth May,Elizabeth-May.jpg,https://www.ourcommons.ca/members/en/elizabeth-may(2897)
 Eric Berntson,Eric-Berntson.jpg,https://lop.parl.ca/sites/ParlInfo/default/en_CA/People/Profile?personId=16690
 Eric Olauson,Eric-Olauson.jpg,https://www.saskparty.com/olauson
 Frank Howard,Frank-Howard.jpeg,https://en.wikipedia.org/wiki/Frank_Howard_(Canadian_politician)
@@ -47,9 +47,9 @@ Marwan Tabbara,Marwan-Tabbara.jpeg,https://en.wikipedia.org/wiki/Marwan_Tabbara
 Michael Nadli,Michael-Nadli.jpg,https://ntassembly.libguides.com/members/18th-deh-cho
 Mike Allen,Mike-Allen.jpg,https://www.cbc.ca/news/canada/edmonton/fort-mcmurray-mike-allen-pc-mla-council-election-1.4295779
 Mike Currie,Mike-Currie.jpg,https://www.cbc.ca/news/canada/prince-edward-island/currie-to-run-in-cardigan-1.1102299
-Mike Davidson,Mike-Davidson.jpg,https://www.ola.org/en/members/all/michael-norman-davison
-Nadine Wilson *,Nadine-Wilson.png,https://en.wikipedia.org/wiki/Nadine_Wilson
-Pablo Rodriguez *,Pablo-Rodriguez.jpg,https://en.wikipedia.org/wiki/Pablo_Rodriguez_(Canadian_politician)
+Mike Davison,Mike-Davison.jpg,https://www.ola.org/en/members/all/michael-norman-davison
+Nadine Wilson,Nadine-Wilson.png,https://en.wikipedia.org/wiki/Nadine_Wilson
+Pablo Rodriguez,Pablo-Rodriguez.jpg,https://en.wikipedia.org/wiki/Pablo_Rodriguez_(Canadian_politician)
 Pat Pimm,Pat-Pimm.jpg,https://en.wikipedia.org/wiki/Pat_Pimm
 Peter Ittinuar,Peter-Ittinuar.jpg,https://lop.parl.ca/sites/ParlInfo/default/en_CA/People/Profile?personId=3790
 Ralph Katzman,Ralph-Katzman.jpg,https://equitablevote.textstyle.ca/index.php?lang=1&sec=peo&pg=fp&profid=3345
@@ -61,10 +61,10 @@ Richard Hurlburt,Richard-Hurlburt.jpg,https://nslegislature.ca/members/profiles/
 Rob Anders,Rob-Anders.jpg,https://en.wikipedia.org/wiki/Rob_Anders
 Robert Sommers,Robert-Sommers.jpg,https://www.evergreenalliance.ca/action-groups/forest-hall-of-shame/
 Robert Wilson,Robert-Wilson.jpg,https://www.facebook.com/photo/?fbid=280337264192990&set=pb.100066501546755.-2207520000
-Romeo Saganash ,Romeo-Saganash.jpg,https://en.wikipedia.org/wiki/Romeo_Saganash
+Romeo Saganash,Romeo-Saganash.jpg,https://en.wikipedia.org/wiki/Romeo_Saganash
 Ryan Domotor,Ryan-Domotor.webp,https://leaderpost.com/news/politics/with-sex-solicitation-charge-stayed-mla-domotor-says-i-regret-what-i-tried-to-do
-Scott Moe*,Scott-Moe.jpg,https://www.saskatchewan.ca/government/government-structure/cabinet/honourable-scott-moe
-Steven Guilbeault *,Steven-Guilbeault.jpg,https://www.ourcommons.ca/members/en/steven-guilbeault(14171)
+Scott Moe,Scott-Moe.jpg,https://www.saskatchewan.ca/government/government-structure/cabinet/honourable-scott-moe
+Steven Guilbeault,Steven-Guilbeault.jpg,https://www.ourcommons.ca/members/en/steven-guilbeault(14171)
 Svend Robinson,Svend-Robinson.jpg,https://en.wikipedia.org/wiki/Svend_Robinson
 Terry Dennis,Terry-Dennis.jpeg,https://www.legassembly.sk.ca/mlas/member-details?first=Terry&last=Dennis#
 Terry Jenson,Terry-Jenson.jpg,https://www.saskatchewan.ca/government/government-structure/cabinet/honourable-terry-jenson
@@ -74,6 +74,7 @@ Trevor Zinck,Trevor-Zinck.jpg,https://www.cbc.ca/news/canada/nova-scotia/trevor-
 Vic Toews,Vic-Toews.jpg,https://en.wikipedia.org/wiki/Vic_Toews
 Wab Kinew,Wab-Kinew.jpg,https://en.wikipedia.org/wiki/Wab_Kinew
 Wally Andersen,Wally-Andersen.png,https://nunatsiavut.com/government/elected-officials/
-Warren Steinley*,Warren-Steinley.jpg,https://www.ourcommons.ca/members/en/warren-steinley(105581)
+Warren Steinley,Warren-Steinley.jpg,https://www.ourcommons.ca/members/en/warren-steinley(105581)
 William Andersen III,William-Andersen-III.webp,https://turtletalk.blog/2011/04/27/sexual-assault-conviction-of-former-president-of-nunatsiavut-government-upheld-sentence-increased/
 Yves St-Denis,Yves-St-Denis.jpg,https://en.wikipedia.org/wiki/Yves_St-Denis
+Yves Francois Blanchet,Yves-Francois-Blanchet.jpg,https://www.ourcommons.ca/members/en/yves-francois-blanchet(104669)
