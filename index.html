@@ -14,79 +14,128 @@
     </head>
 
     <body>
-        <h1>
-            <embed src="pics/Canada-Flag.svg" height="30px">
-            Crimes by Canadian Politicians
-        </h1>
+        <div class="upperbody">
+            <h1 id="sitetitle" height="27px">
+                <embed src="pics/Canada-Flag.svg" id="canada-flag">
+                Crimes by Canadian Politicians
+            </h1>
 
-        <div class="attribution">
-            <p>
-                <a
-                    href="https://www.tiktok.com/@jonnylegato5/video/7430545507333721349?is_from_webapp=1&sender_device=pc&web_id=7430988187822900741">
-                    Source
-                </a> | <a
-                    href="https://docs.google.com/spreadsheets/d/1gof45QUi2p0f8YVaKa2fOgtIUBElSueh/htmlview">
-                    Data
-                </a> | <a
-                    href="https://github.com/jeremy-friesen/can-pol-crimes">
-                    GitHub
-                </a>
-            </p>
-        </div>
+            <div class="attribution">
+                <p>
+                    <a
+                        href="https://docs.google.com/spreadsheets/d/1gof45QUi2p0f8YVaKa2fOgtIUBElSueh/htmlview">
+                        Source</a> | <a
+                        href="https://github.com/jeremy-friesen/can-pol-crimes">
+                        GitHub</a> | <a
+                        href="https://github.com/jeremy-friesen/can-pol-crimes/issues/new">
+                        Report Issue</a>
+                </p>
+            </div>
+            <div class="disclaimer-container">
+                <div class="disclaimer">
+                    <span class="warning-icon">
+                        <embed src="pics/Warning-Sign.svg">
+                    </span>
+                    <span>
+                        <p>
+                            <b>Work in progress.</b>
+                            Data may be incorrect or outdated.
+                            Please use discernment.
+                        </p>
+                    </span>
+                </div>
+            </div>
 
-        <div class="search-download-container">
+            <div class="search-download-container">
 
-            <input type="text"
-                id="search"
-                placeholder="Search..."
-                onkeyup="filterTable()" />
+                <input type="text"
+                    id="search"
+                    placeholder="Search..."
+                    onkeyup="filterTable()" />
 
-            <div class="download-dropdown">
-                <button class="dropbtn">
-                    <svg width="24px"
-                        height="24px" stroke-width="1" viewBox="0 0 24 24"
-                        fill="none" xmlns="http://www.w3.org/2000/svg"
-                        color="#000000">
-                        <path d="M6 20L18 20" stroke="#000000"
-                            stroke-width="2.5" stroke-linecap="round"
-                            stroke-linejoin="round"></path><path
-                            d="M12 4V16M12 16L15.5 12.5M12 16L8.5 12.5"
-                            stroke="#000000" stroke-width="2.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round">
-                        </path>
-                    </svg>
-                    <b>Download</b>
-                </button>
-                <div class="dropdown-content">
-                    <a href="#" onclick="downloadTable('csv')">CSV</a>
-                    <a href="#" onclick="downloadTable('excel')">Excel</a>
-                    <a href="#" onclick="downloadTable('pdf')">PDF</a>
+                <div class="download-dropdown">
+                    <button class="dropbtn">
+                        <svg width="24px"
+                            height="24px" stroke-width="1" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg"
+                            color="#000000">
+                            <path d="M6 20L18 20" stroke="#000000"
+                                stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path><path
+                                d="M12 4V16M12 16L15.5 12.5M12 16L8.5 12.5"
+                                stroke="#000000" stroke-width="2.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                            </path>
+                        </svg>
+                        <b>Download</b>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="downloadTable('csv')">CSV</a>
+                        <a href="#" onclick="downloadTable('excel')">Excel</a>
+                        <a href="#" onclick="downloadTable('pdf')">PDF</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="table-container">
+                <table id="data-table">
+                    <thead>
+                        <tr id="header-row"></tr>
+                    </thead>
+                    <tbody id="data-body"></tbody>
+                </table>
+            </div>
+
+            <div id="charts" style="display: none;">
+                <br />
+                <br />
+                <h1>Charts</h1>
+                <div class="canvas-container">
+                    <canvas id="provinceChart" width="1000"
+                        height="600"></canvas>
+                </div>
+                <div class="canvas-container">
+                    <canvas id="partyChart" width="1000" height="600"></canvas>
                 </div>
             </div>
 
         </div>
 
-        <div class="table-container">
-            <table id="data-table">
-                <thead>
-                    <tr id="header-row"></tr>
-                </thead>
-                <tbody id="data-body"></tbody>
-            </table>
-        </div>
+        <footer class="footer">
+            <div class="footer-content">
+                <!-- Sources Section -->
+                <div class="footer-section sources">
+                    <h3>Sources</h3>
+                    <ul>
+                        <li><a href="#">Source 1</a></li>
+                        <li><a href="#">Source 2</a></li>
+                        <li><a href="#">Source 3</a></li>
+                    </ul>
+                </div>
 
-        <h1>Charts</h1>
-
-        <div id="charts">
-            <div class="canvas-container">
-                <canvas id="provinceChart"></canvas>
+                <!-- Contribution Section -->
+                <div class="footer-section contribute">
+                    <h3>Contribute</h3>
+                    <p>We welcome contributions! See our <a
+                            href="#">contribution
+                            guidelines</a> to get started.</p>
+                    <p>Submit a pull request or contact us at <a
+                            href="mailto:contribute@example.com">contribute@example.com</a></p>
+                </div>
             </div>
-            <div class="canvas-container">
-                <canvas id="partyChart"></canvas>
-            </div>
-        </div>
 
+            <!-- Copyright and Social Links -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 Your Project Name. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#">Twitter</a> |
+                    <a href="#">GitHub</a> |
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </body>
 
 </html>

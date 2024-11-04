@@ -155,6 +155,7 @@ fetch(baseUrl)
                     }
                     td.className = 'first-column';
                     td.textContent = cell ? cell.v : '';
+                    td.style.fontWeight = 'bold';
                     td.appendChild(document.createElement('br'));
                     td.appendChild(img);
                     // newRow.appendChild(imgCell);
@@ -239,6 +240,8 @@ function createProvinceChart(data) {
     const provinceCounts = {};
 
     console.log('creating province chart');
+
+    document.getElementById('charts').style.display = 'flex';
 
     // Count crimes by province
     for (const politician in data) {
