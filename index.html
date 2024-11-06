@@ -5,7 +5,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="script.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
         <link rel="stylesheet" href="style.css">
         <link rel="svg" href="pics/Canada-Flag.svg">
         <link rel="icon" href="pics/Canada-Flag.svg" sizes="any"
@@ -14,6 +19,9 @@
     </head>
 
     <body>
+        <!-- JS source -->
+        <script src="script.js"></script>
+
         <div class="upperbody">
             <h1 id="sitetitle" height="27px">
                 <embed src="pics/Canada-Flag.svg" id="canada-flag">
@@ -24,7 +32,7 @@
                 <p>
                     <a
                         href="https://docs.google.com/spreadsheets/d/1gof45QUi2p0f8YVaKa2fOgtIUBElSueh/htmlview">
-                        Source</a> | <a
+                        Data Source</a> | <a
                         href="https://github.com/jeremy-friesen/can-pol-crimes">
                         GitHub</a> | <a
                         href="https://github.com/jeremy-friesen/can-pol-crimes/issues/new">
@@ -40,7 +48,9 @@
                         <p>
                             <b>Work in progress.</b>
                             Data may be incorrect or outdated.
-                            Please use discernment.
+                            Please fact-check and <a
+                                href="https://github.com/jeremy-friesen/can-pol-crimes/issues/new">report
+                                issues</a>.
                         </p>
                     </span>
                 </div>
@@ -74,6 +84,9 @@
                         <a href="#" onclick="downloadTable('csv')">CSV</a>
                         <a href="#" onclick="downloadTable('excel')">Excel</a>
                         <a href="#" onclick="downloadTable('pdf')">PDF</a>
+                        <a
+                            href="https://github.com/jeremy-friesen/can-pol-crimes/archive/refs/heads/main.zip">Website
+                            .zip</a>
                     </div>
                 </div>
 
@@ -105,35 +118,45 @@
 
         <footer class="footer">
             <div class="footer-content">
-                <!-- Sources Section -->
+
                 <div class="footer-section sources">
-                    <h3>Sources</h3>
+                    <h3>Data Source</h3>
                     <ul>
-                        <li><a href="#">Source 1</a></li>
-                        <li><a href="#">Source 2</a></li>
-                        <li><a href="#">Source 3</a></li>
+                        <li>Thanks to <a
+                                href="https://www.tiktok.com/@jonnylegato5">@jonnylegato5
+                                on TikTok</a> for compiling the <a
+                                href="https://docs.google.com/spreadsheets/d/1gof45QUi2p0f8YVaKa2fOgtIUBElSueh/htmlview">original
+                                spreadsheet</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section contribute">
+                    <h3>Contribute</h3>
+                    <p>Contribute, report issues, ask questions and more on the
+                        <a
+                            href="https://github.com/jeremy-friesen/can-pol-crimes/">Project
+                            GitHub</a>.</p>
+                </div>
+
+                <div class="footer-section sources">
+                    <h3>Website Contributors</h3>
+                    <ul>
+                        <li><a href="https://github.com/jeremy-friesen">Jeremy
+                                Friesen</a></li>
                     </ul>
                 </div>
 
                 <!-- Contribution Section -->
-                <div class="footer-section contribute">
-                    <h3>Contribute</h3>
-                    <p>We welcome contributions! See our <a
-                            href="#">contribution
-                            guidelines</a> to get started.</p>
-                    <p>Submit a pull request or contact us at <a
-                            href="mailto:contribute@example.com">contribute@example.com</a></p>
-                </div>
             </div>
 
             <!-- Copyright and Social Links -->
             <div class="footer-bottom">
-                <p>&copy; 2024 Your Project Name. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#">Twitter</a> |
-                    <a href="#">GitHub</a> |
-                    <a href="#">LinkedIn</a>
-                </div>
+                <p>This website is open-source with a <a
+                        href="https://github.com/jeremy-friesen/can-pol-crimes/blob/main/LICENSE.md">GNU
+                        GPLv3</a> license.</p>
+                <!-- <div class="social-links">
+                    <a href="#">GitHub</a>
+                </div> -->
             </div>
         </footer>
     </body>
