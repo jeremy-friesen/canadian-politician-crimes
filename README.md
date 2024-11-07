@@ -1,4 +1,4 @@
-# Canadian Politician Crimes
+# [Canadian Politician Crimes](https://jeremy-friesen.github.io/canadian-politician-crimes/)
 
 ![website screenshot](./pics/site-screenshot.jpg)
 
@@ -26,6 +26,7 @@ This project is a compilation of data and visualizations about criminal charges 
     -   [ ] Crimes by Political Affiliation or Ideology
     -   [ ] ...
 -   [ ] Add an "additions" file/folder (JSON/CSV/etc) for easier data contributions
+-   [ ] Visually indicate *charged* or *convicted* status
 -   [ ] Handle cases with 2 or more party affiliations
 -   [ ] Last-updated date
 
