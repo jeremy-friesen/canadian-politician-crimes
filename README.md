@@ -33,7 +33,7 @@ This project is a compilation of data and visualizations about criminal charges 
 
 #### Anyone
 
--   [Suggest data additions](https://github.com/jeremy-friesen/canadian-politician-crimes/issues/new) for crimes that haven't been added yet.
+-   [Suggest data additions](https://github.com/jeremy-friesen/canadian-politician-crimes/issues/new) for crimes that aren't added yet.
     -   When possible, please include:
     ```
     name:
@@ -47,7 +47,7 @@ This project is a compilation of data and visualizations about criminal charges 
     ```
 -   [Report issues](https://github.com/jeremy-friesen/canadian-politician-crimes/issues/new), such as bugs or incorrect data.
 -   [Suggest features](https://github.com/jeremy-friesen/canadian-politician-crimes/issues/new) or enhancements in design, accessibility, etc.
--   [Star this repo](/jeremy-friesen/canadian-politician-crimes/star) to boost its visibility :)
+-   Refine data; Check sources, correct details, etc.
 
 #### Programmers/Designers/etc
 
