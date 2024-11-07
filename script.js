@@ -1,12 +1,29 @@
+// google sheet url
 const sheetId = '1gof45QUi2p0f8YVaKa2fOgtIUBElSueh';
 const baseUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
 
+// map party name to colour value
 var partyColours = {};
+// map names to data object
 var politicians = {};
+// map names to picture url and source
 var pics = {};
+// store original list order to undo sorting
+let originalOrder = [];
+// default sort direction
+let sortDirection = 'neutral';
 
-// Function to load the pics.txt file
-fetch('pics.txt')
+// default chart colours
+const defaultColours = [
+    'rgba(255, 99, 132, 0.6)',
+    'rgba(54, 162, 235, 0.6)',
+    'rgba(255, 206, 86, 0.6)',
+    'rgba(75, 192, 192, 0.6)',
+    'rgba(153, 102, 255, 0.6)',
+    'rgba(255, 159, 64, 0.6)'
+];
+
+fetch('data/pics.txt')
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -15,13 +32,11 @@ fetch('pics.txt')
     })
     .then(data => {
         const rows = data.split('\n');
-        // const tableBody = document.querySelector('#pics-table tbody');
 
         rows.forEach(row => {
             if (row.trim()) {
                 const columns = row.split(',');
                 pics[columns[0]] = 'pics/' + columns[1]
-                // tableBody.appendChild(newRow);
             }
         });
     })
@@ -29,8 +44,7 @@ fetch('pics.txt')
         console.error('There was a problem with the fetch operation:', error);
     });
 
-
-fetch('party-colours.json')
+fetch('data/party-colours.json')
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -45,39 +59,37 @@ fetch('party-colours.json')
         console.error('There was a problem with the fetch operation for party colours:', error);
     });
 
-function getPartyColours(politician, partyText) {
+// takes party column text and returns list of relevant parties 
+function getPartyColours(partyText) {
+    return Object.keys(partyColours)
+        .filter(k => partyText.includes(k) && !(k === 'Independent'))
+        .map(k => {
+            partyText = partyText.replace(k, '');
+            return partyColours[k];
+        });
+}
+
+// takes party column text and returns list of relevant parties 
+function fillParties(politician, partyText) {
     var keys = Object.keys(partyColours);
-    var pColours = [];
     politician['partyCategories'] = []
     var t = partyText;
     for (let i = 0; i < keys.length; i++) {
         const k = keys[i];
-        if (t.includes(k) && !(k == 'Independent' && pColours.length > 0)) {
-            pColours.push(partyColours[k]);
+        if (t.includes(k)) {
             t = t.replace(k, '')
             politician['partyCategories'].push(k)
         }
     }
-    return pColours;
 }
 
-function getPartyColours2(partyText) {
-    var keys = Object.keys(partyColours);
-    var pColours = [];
-    var t = partyText;
-    for (let i = 0; i < keys.length; i++) {
-        const k = keys[i];
-        if (t.includes(k) && !(k == 'Independent' && pColours.length > 0)) {
-            pColours.push(partyColours[k]);
-            t = t.replace(k, '')
-        }
-    }
-    return pColours;
-}
-
+// data from google sheet
 fetch(baseUrl)
     .then(response => response.text())
     .then(data => {
+        console.log('google sheet data: ');
+        console.log(data);
+
         const jsonData = JSON.parse(
             data.substr(47).slice(0, -2)
                 .replace('Yellow = In Office', '')
@@ -85,7 +97,7 @@ fetch(baseUrl)
         const cols = jsonData.table.cols;
         const rows = jsonData.table.rows;
 
-        // Populate headers
+        // populate headers
         cols.forEach((col, index) => {
             const th = document.createElement('th');
             th.textContent = col.label;
@@ -93,12 +105,9 @@ fetch(baseUrl)
             document.getElementById('header-row').appendChild(th);
         });
 
-        // Populate rows
+        // populate rows
         rows.forEach(row => {
             const tr = document.createElement('tr');
-
-            // if (row.c[2])
-            //     console.log(row.c[2].v)
 
             if (row.c[0] == null || row.c[0].v === '' || row.c[3] == null || row.c[3].v === '') {
                 return;
@@ -111,14 +120,6 @@ fetch(baseUrl)
                 if (cell)
                     politician[cols[index].label] = cell.v
 
-                // Get the party name
-                const partyName = row.c[2] ? row.c[2].v.trim() : '';
-
-                const pColours = getPartyColours(politician, partyName)
-                // Set the background color based on the partyColours dictionary
-                const color = pColours[pColours.length - 1] || '#4c4c4c';
-                const textColour = getContrastingTextColor(color);
-
                 // source
                 if (index === 7 && cell.v != null && (cell.v.includes('http://') || cell.v.includes('https://'))) {
                     var siteName = cell.v
@@ -128,10 +129,7 @@ fetch(baseUrl)
                         .split('/')[0];
                     const link = document.createElement('a');
                     link.href = cell.v;
-                    // link.target = '_blank';
                     link.textContent = siteName;
-                    // console.log('textContent: ' + siteName);
-                    //.charAt(0).toUpperCase() + siteName.slice(1); // Capitalize the first letter
                     td.appendChild(link);
                 }
                 // time in office
@@ -148,15 +146,23 @@ fetch(baseUrl)
                 }
                 // party
                 else if (index === 2) {
+                    // Get the party name
+                    const partyName = cell ? cell.v.trim() : '';
+
+                    // Set the background color based on the partyColours dictionary
+                    const pColours = getPartyColours(partyName)
+                    fillParties(politician, partyName)
+                    const color = pColours[pColours.length - 1] || '#4c4c4c';
+                    const textColour = getContrastingTextColor(color);
+
                     td.style.backgroundColor = color;
                     td.style.color = textColour;
                     td.style.fontWeight = 'bold';
                     td.textContent = cell ? cell.v : '';
                 }
-                // Year of Charge/ Conviction
+                // year of charge/conviction
                 else if (index === 4) {
                     td.textContent = cell ? cell.v : '';
-                    console.log(td.textContent);
                 }
                 // politician name/picture
                 else if (index === 0 && row.c[0]) {
@@ -177,14 +183,11 @@ fetch(baseUrl)
                     td.style.fontWeight = 'bold';
                     td.appendChild(document.createElement('br'));
                     td.appendChild(img);
-                    // newRow.appendChild(imgCell);
                 }
                 else {
                     td.textContent = cell ? cell.v : '';
                 }
                 tr.appendChild(td);
-                // whole row party colour
-                // tr.style.backgroundColor = color;
             });
             politicians[row.c[0].v] = politician
             document.getElementById('data-body').appendChild(tr);
@@ -195,8 +198,7 @@ fetch(baseUrl)
     })
     .catch(error => console.error('Error fetching data:', error));
 
-
-
+// search bar onkeyup behaviour
 function filterTable() {
     const input = document.getElementById('search');
     const filter = input.value.toLowerCase();
@@ -212,128 +214,85 @@ function filterTable() {
                 break;
             }
         }
-
         row.style.display = rowVisible ? '' : 'none';
     });
 }
 
-let originalOrder = []; // Array to store the original order of rows
-let sortDirection = 'neutral';
-
-// Function to sort the table by column
+// on header click
 function sortTable(columnIndex) {
     const table = document.getElementById('data-table');
     const rows = Array.from(table.querySelectorAll('tbody tr'));
     const headerCells = table.querySelectorAll('thead th');
 
-    // If originalOrder is empty, store the original order of the rows
     if (originalOrder.length === 0) {
-        originalOrder = rows.map(row => row.cloneNode(true)); // Clone the original rows
+        originalOrder = rows.map(row => row.cloneNode(true));
     }
 
-    // Clear all existing arrows from header cells
+    // clear any existing arrows from header cells
     headerCells.forEach(cell => {
-        cell.innerHTML = cell.innerHTML.replace(/ ▲| ▼/g, ''); // Remove arrows if present
+        cell.innerHTML = cell.innerHTML.replace(/ ▲| ▼/g, '');
     });
 
-    // Determine the current sort state for the clicked column
+    // first click, sort ascending
     if (sortDirection === 'neutral') {
-        // First click, set to ascending
         sortDirection = 'asc';
-    } else if (sortDirection === 'asc') {
-        // Second click, set to descending
-        sortDirection = 'desc';
-    } else {
-        // Third click, revert to original order
-        sortDirection = 'neutral';
 
-        // Clear the current rows and append the original order
+        // second click, sort descending
+    } else if (sortDirection === 'asc') {
+        sortDirection = 'desc';
+
+        // third click, revert to original order
+    } else {
+        sortDirection = 'neutral';
         const tbody = table.querySelector('tbody');
-        tbody.innerHTML = ''; // Clear current rows
-        originalOrder.forEach(row => tbody.appendChild(row.cloneNode(true))); // Append original rows
-        return; // Exit after reverting to the original order
+        tbody.innerHTML = '';
+        originalOrder.forEach(row => tbody.appendChild(row.cloneNode(true)));
+        return;
     }
 
-    // Sort the rows based on the selected direction
+    // sort the rows based on the selected direction
     rows.sort((a, b) => {
         const cellA = a.cells[columnIndex].innerText.trim();
         const cellB = b.cells[columnIndex].innerText.trim();
 
+        // sort numerically if both cells are numbers
         if (!isNaN(cellA) && !isNaN(cellB)) {
-            // Sort numerically if both cells are numbers
             return sortDirection === 'asc' ? cellA - cellB : cellB - cellA;
-        } else {
-            // Sort alphabetically otherwise
+
+        } else { // alphabetically otherwise
             return sortDirection === 'asc' ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
         }
     });
 
-    // Clear the current rows and append the sorted rows
+    // clear the current rows and append the sorted rows
     const tbody = table.querySelector('tbody');
-    tbody.innerHTML = ''; // Clear current rows
-    rows.forEach(row => tbody.appendChild(row)); // Append sorted rows
+    tbody.innerHTML = '';
+    rows.forEach(row => tbody.appendChild(row));
 
-    // Add the appropriate arrow to the sorted column, if not neutral
+    // add the appropriate arrow to the sorted column
     const arrow = sortDirection === 'asc' ? ' ▲' : ' ▼';
     headerCells[columnIndex].innerHTML += arrow;
 }
 
+// get black or white text color, whichever has better contrast for given background
 function getContrastingTextColor(hexColor) {
-    // Convert hex to RGB
     const r = parseInt(hexColor.slice(1, 3), 16);
     const g = parseInt(hexColor.slice(3, 5), 16);
     const b = parseInt(hexColor.slice(5, 7), 16);
-
-    // Calculate luminance
     const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-
-    // Return black for light colors and white for dark colors
     return luminance > 0.5 ? '#000000' : '#FFFFFF';
 }
 
-function createProvinceChart(data) {
-    const provinceCounts = {};
-
-    console.log('creating province chart');
-
-    document.getElementById('charts').style.display = 'flex';
-
-    // Count crimes by province
-    for (const politician in data) {
-        const province = data[politician].Province;
-        provinceCounts[province] = (provinceCounts[province] || 0) + 1;
-    }
-
-    const sortedProvinces = Object.entries(provinceCounts)
-        .sort((a, b) => b[1] - a[1]); // Sort in descending order
-
-    const provinces = sortedProvinces.map(entry => entry[0]);
-    const counts = sortedProvinces.map(entry => entry[1]);
-
-    // A color palette array for consistent, aesthetically pleasing colors
-    const colorPalette = [
-        'rgba(255, 99, 132, 0.6)',   // Soft red
-        'rgba(54, 162, 235, 0.6)',   // Soft blue
-        'rgba(255, 206, 86, 0.6)',   // Soft yellow
-        'rgba(75, 192, 192, 0.6)',   // Soft teal
-        'rgba(153, 102, 255, 0.6)',  // Soft purple
-        'rgba(255, 159, 64, 0.6)'    // Soft orange
-    ];
-
-    // Repeat or slice the color palette to match the number of data points
-    const backgroundColors = Array.from({ length: counts.length }, (_, i) => colorPalette[i % colorPalette.length]);
-
-
-    const ctx = document.getElementById('provinceChart').getContext('2d');
-    const provinceChart = new Chart(ctx, {
-        type: 'bar',
+function drawChart(tagId, labels, data, title, xlabel, colours = defaultColours, type = 'bar') {
+    const ctx = document.getElementById(tagId).getContext('2d');
+    var c = Array.from({ length: data.length }, (_, i) => colours[i % colours.length]);
+    new Chart(ctx, {
+        type: type,
         data: {
-            labels: provinces,
+            labels: labels,
             datasets: [{
-                label: 'Number of Crimes',
-                data: counts,
-                // backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                backgroundColor: backgroundColors,
+                data: data,
+                backgroundColor: c,
                 borderColor: '#000000',
                 borderWidth: 1
             }]
@@ -342,11 +301,11 @@ function createProvinceChart(data) {
             responsive: true,
             plugins: {
                 legend: {
-                    display: true,
+                    display: false,
                 },
                 title: {
                     display: true,
-                    text: 'Crimes by Province or Territory',
+                    text: title,
                     font: {
                         size: 20
                     }
@@ -355,243 +314,219 @@ function createProvinceChart(data) {
             scales: {
                 y: {
                     beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Number of Crimes'
-                    }
                 },
                 x: {
                     title: {
                         display: true,
-                        text: 'Province'
+                        text: xlabel
                     }
                 }
             }
         }
     });
+}
+
+function createProvinceChart(data) {
+    const provinceCounts = {};
+
+    document.getElementById('charts').style.display = 'flex';
+
+    // count crimes by province
+    for (const politician in data) {
+        const province = data[politician].Province;
+        provinceCounts[province] = (provinceCounts[province] || 0) + 1;
+    }
+
+    // sort in descending order
+    const sortedProvinces = Object.entries(provinceCounts)
+        .sort((a, b) => b[1] - a[1]);
+
+    const provinces = sortedProvinces.map(entry => entry[0]);
+    const counts = sortedProvinces.map(entry => entry[1]);
+
+    drawChart('provinceChart', provinces, counts, 'Crimes by Province or Territory', 'Province');
 }
 
 function createPartyChart(data) {
     const partyCounts = {};
     const partyColours = {};
 
-    // Count crimes by party
+    // count crimes by party
     for (const i in data) {
-        politician = data[i]
+        politician = data[i];
         var party = politician['partyCategories'][politician['partyCategories'].length - 1];
         if (party == undefined) {
-            party = 'N/A'
+            party = 'N/A';
         }
-        party = party.replace(' Party', '')
-        var pc = getPartyColours2(party)
-        var c = pc[pc.length - 1]
+        party = party.replace(' Party', '');
+        var pc = getPartyColours(party);
+        var c = pc[pc.length - 1];
         if (party === 'New Democratic') {
-            party = 'NDP'
+            party = 'NDP';
         }
         if (party == 'British Columbia Social Credit') {
-            party = 'BC Social Credit'
+            party = 'BC Social Credit';
         }
-        partyColours[party] = c
+        partyColours[party] = c;
         partyCounts[party] = (partyCounts[party] || 0) + 1;
     }
 
+    // sort in descending order
     const sortedParties = Object.entries(partyCounts)
-        .sort((a, b) => b[1] - a[1]); // Sort in descending order
+        .sort((a, b) => b[1] - a[1]);
 
     const parties = sortedParties.map(entry => entry[0]);
     const counts = sortedParties.map(entry => entry[1]);
-    const colours = sortedParties.map(entry => partyColours[entry[0]])
+    const colours = sortedParties.map(entry => partyColours[entry[0]]);
 
-    const ctx = document.getElementById('partyChart').getContext('2d');
-    const partyChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: parties,
-            datasets: [{
-                label: 'Number of Crimes',
-                data: counts,
-                backgroundColor: colours,//'rgba(153, 102, 255, 0.6)',
-                borderColor: '#000000',//'rgba(153, 102, 255, 1)',
-                borderWidth: 2
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    display: true,
-                },
-                title: {
-                    display: true,
-                    text: 'Crimes by Political Party',
-                    font: {
-                        size: 20
-                    }
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Number of Crimes'
-                    },
-                },
-                x: {
-                    title: {
-                        display: true,
-                        text: 'Party'
-                    },
-                }
-            }
-        },
-        // plugins: [{
-        //     beforeInit: function (chart) {
-        //         chart.data.labels.forEach(function (label, index, labelsArr) {
-        //             if (/\n/.test(label)) {
-        //                 labelsArr[index] = label.split(/\n/)
-        //             }
-        //         })
-        //     }
-        // }]
-    });
-}
-
-function downloadTable(format) {
-    switch (format) {
-        case 'csv':
-            downloadCSV();
-            break;
-        case 'excel':
-            downloadExcel();
-            break;
-        case 'pdf':
-            downloadPDF();
-            break;
-    }
+    drawChart('partyChart', parties, counts, 'Crimes by Party', 'Party', colours);
 }
 
 function downloadCSV() {
     const rows = document.querySelectorAll('#data-table tr');
     let csvContent = Array.from(rows).map(row => {
         const cells = row.querySelectorAll('th, td');
-        return Array.from(cells).map(cell => cell.textContent).join(',');
+        return Array.from(cells).map((cell, index) => {
+            if (index === cells.length - 1) {
+                const link = cell.querySelector('a');
+                if (link)
+                    return `"${link.href}"`;
+            }
+            return `"${cell.textContent.replace('\n', '').trim()}"`;
+        }).join(',');
     }).join('\n');
 
     const blob = new Blob([csvContent], { type: 'text/csv' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = 'data.csv';
+    link.download = 'CanadaPoliticianCrimes.csv';
     link.click();
 }
 
 function downloadExcel() {
     const table = document.getElementById('data-table');
-    const workbook = XLSX.utils.table_to_book(table);
-    const excelFile = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+
+    const tableClone = table.cloneNode(true);
+    const rows = Array.from(tableClone.rows);
+
+    // loop through rows and replace last column's content link text
+    rows.forEach(row => {
+        const cells = row.querySelectorAll('th, td');
+        const link = cells[cells.length - 1].querySelector('a');
+        console.log('name: ' + cells[0].textContent);
+        if (link) {
+            cells[cells.length - 1].textContent = link.href;
+        }
+        console.log(cells[cells.length - 1].textContent)
+        cells[0].textContent = cells[0].textContent.replace('\n', '').trim()
+    });
+
+    // convert table to an array of data
+    const data = rows.map(row => {
+        const cells = Array.from(row.querySelectorAll('th, td'));
+        return cells.map(cell => cell.textContent.toString());
+    });
+
+    // create a worksheet from the data array
+    const ws = XLSX.utils.aoa_to_sheet(data);
+
+    // create a workbook with the worksheet
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+
+    const excelFile = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
 
     const blob = new Blob([excelFile], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = 'data.xlsx';
+    link.download = 'CanadaPoliticianCrimes.xlsx';
     link.click();
 }
 
-function downloadPDF() {
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF('p', 'pt', 'a4');
+async function downloadPDF(includePictures) {
+    const tableData = document.querySelectorAll('#data-table tr');
+    const rows = [];
 
-    pdf.text('Crimes by Canadian Politicians', 40, 40);
+    for (const row of tableData) {
+        const cells = row.querySelectorAll('th, td');
 
-    pdf.autoTable({
-        html: '#data-table',
-        startY: 60,
-        styles: { fontSize: 8, cellPadding: 2 },
-        headStyles: { fillColor: [41, 128, 185], textColor: 255 }
-    });
+        const rowData = await Promise.all(Array.from(cells).map(async (cell, index) => {
+            // name column with image
+            if (index === 0 && includePictures) {
+                const img = cell.querySelector('img');
+                if (img) {
+                    try {
+                        const base64Image = await getBase64ImageFromURL(img.src);
 
-    pdf.save('data.pdf');
-}
+                        if (base64Image) {
+                            return {
+                                stack: [
+                                    {
+                                        text: cell.textContent.trim(),
+                                    },
+                                    {
+                                        image: base64Image,
+                                        width: 50
+                                    }
+                                ],
+                            };
+                        }
+                    } catch (error) {
+                        console.error("Error converting image to Base64:", error);
+                        return { text: "Image Error" };
+                    }
+                }
+            }
 
-// Helper function to convert an image URL to a Base64 string
-function getImageAsBase64(url, callback) {
-    const img = new Image();
-    img.crossOrigin = 'Anonymous';
-    img.onload = function () {
-        const canvas = document.createElement('canvas');
-        canvas.width = img.width;
-        canvas.height = img.height;
-        const ctx = canvas.getContext('2d');
-        ctx.drawImage(img, 0, 0);
-        const dataURL = canvas.toDataURL('image/png');
-        callback(dataURL);
+            // source column with a hyperlink
+            const link = cell.querySelector('a');
+            if (link) {
+                return { text: link.textContent.trim(), link: link.href };
+            }
+
+            return cell.textContent.trim();
+        }));
+        rows.push(rowData);
     };
-    img.src = url;
+
+    const docDefinition = {
+        content: [
+            { text: 'Crimes by Canadian Politicians', fontSize: 18, bold: true, margin: [0, 0, 0, 0] },
+            {
+                table: {
+                    body: rows
+                },
+                layout: 'auto'
+            }
+        ],
+        pageMargins: [0, 0, 0, 0],
+    };
+
+    pdfMake.createPdf(docDefinition).download('CanadaPoliticianCrimes.pdf');
 }
 
-// Main function to download PDF with images
-// function downloadPDF() {
-//     const { jsPDF } = window.jspdf;
-//     const pdf = new jsPDF('p', 'pt', 'a4');
-//     pdf.text('Crimes by Canadian Politicians', 40, 40);
+function getBase64ImageFromURL(url) {
+    return new Promise((resolve, reject) => {
+        var img = new Image();
+        img.setAttribute("crossOrigin", "anonymous");
 
-//     // Find the table and iterate over each row
-//     const rows = [];
-//     const table = document.getElementById('data-table');
-//     const tableRows = table.querySelectorAll('tbody tr');
+        img.onload = () => {
+            var canvas = document.createElement("canvas");
+            canvas.width = img.width;
+            canvas.height = img.height;
 
-//     tableRows.forEach((row, rowIndex) => {
-//         const cells = row.querySelectorAll('td');
+            var ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0);
 
-//         // Assuming the first cell contains the image
-//         const imgCell = cells[0].querySelector('img');
-//         const imgUrl = imgCell ? imgCell.src : null;
+            var dataURL = canvas.toDataURL("image/png");
 
-//         // Convert the image to Base64 and add row data
-//         if (imgUrl) {
-//             getImageAsBase64(imgUrl, (imgBase64) => {
-//                 const rowData = [imgBase64];
+            resolve(dataURL);
+        };
 
-//                 // Add other cell data
-//                 cells.forEach((cell, index) => {
-//                     if (index > 0) rowData.push(cell.innerText);
-//                 });
+        img.onerror = error => {
+            reject(error);
+        };
 
-//                 // Fill row data with placeholder if image is missing
-//                 rows[rowIndex] = rowData;
-
-//                 // Generate PDF if all rows are populated
-//                 if (rows.length === tableRows.length && rows.every(row => row)) {
-//                     pdf.autoTable({
-//                         head: [['Image', 'Name', 'Crime', 'Date']],
-//                         body: rows.map(row => {
-//                             return [
-//                                 { content: '', styles: { cellWidth: 40, minCellHeight: 40 } },
-//                                 ...row.slice(1)
-//                             ];
-//                         }),
-//                         didDrawCell: (data) => {
-//                             // Check for valid image data
-//                             if (data.column.index === 0 && data.row.index < rows.length && rows[data.row.index][0]) {
-//                                 const imgBase64 = rows[data.row.index][0];
-//                                 pdf.addImage(imgBase64, 'PNG', data.cell.x + 2, data.cell.y + 2, 36, 36);
-//                             }
-//                         },
-//                         startY: 60,
-//                         styles: { fontSize: 8, cellPadding: 2 },
-//                         headStyles: { fillColor: [41, 128, 185], textColor: 255 }
-//                     });
-
-//                     pdf.save('data_with_images.pdf');
-//                 }
-//             });
-//         } else {
-//             // Add placeholder for missing image and proceed
-//             const rowData = [null];
-//             cells.forEach((cell, index) => {
-//                 if (index > 0) rowData.push(cell.innerText);
-//             });
-//             rows[rowIndex] = rowData;
-//         }
-//     });
-// }
+        img.src = url;
+    });
+}

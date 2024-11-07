@@ -2,6 +2,7 @@ html,
 body {
     height: 100%;
     margin: 0;
+    color: #f4f4f4;
 }
 
 .upperbody {
@@ -11,7 +12,6 @@ body {
 
 body {
     font-family: Arial, sans-serif;
-    color: white;
     background-color: #2b2b47;
     background-image: radial-gradient(#181832 2px, transparent 2px);
     background-size: 5px 5px;
@@ -53,7 +53,6 @@ h1 {
 
 .disclaimer-container {
     text-align: center;
-    margin-bottom: 10px;
 }
 
 .disclaimer {
@@ -63,7 +62,8 @@ h1 {
     border: 1px solid #ffd77a;
     border-radius: 5px;
     margin-top: 20px;
-    padding: 0 10px 0 10px;
+    margin-bottom: 10px;
+    padding: 0 10px;
 }
 
 .warning-icon {
@@ -76,11 +76,12 @@ h1 {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
-    gap: 10px
+    margin-top: 50px;
+    gap: 10px;
 }
 
 #search {
-    padding: 5px;
+    padding: 10px;
     width: 100%;
     max-width: 400px;
     border: 0;
@@ -95,11 +96,15 @@ h1 {
     border: 0;
     border-bottom: 1px solid transparent;
     border-radius: 5px;
-    padding-right: 10px;
+    padding-left: 13px;
+    padding-right: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     font-size: 16px;
     cursor: pointer;
     display: flex;
     align-items: center;
+    background-color: white;
 }
 
 .dropdown-content {
@@ -109,6 +114,8 @@ h1 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, .2);
     z-index: 1;
     overflow: hidden;
+    white-space: nowrap;
+    min-width: fit-content;
 }
 
 .dropdown-content a {
@@ -199,13 +206,8 @@ td.first-column {
 
 .footer {
     background-color: #181818;
-    color: #f4f4f4;
     padding: 20px;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
     margin-top: auto;
-
-
     box-shadow: 0 0 15px rgb(0, 0, 0, 0.6);
 }
 
@@ -220,8 +222,7 @@ td.first-column {
 
 .footer-content {
     width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -243,17 +244,7 @@ td.first-column {
 }
 
 .footer-bottom {
-    margin-top: 20px;
+    margin: 30px;
     text-align: center;
     font-size: 0.9em;
-}
-
-.social-links a {
-    margin: 0 5px;
-}
-
-@media (max-width: 600px) {
-    .footer-content {
-        flex-direction: column;
-    }
 }

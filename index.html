@@ -1,164 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<title>Canadian Politicians - Crime</title>
+		<link rel="icon" href="pics/Canada-Flag.svg" sizes="any" type="image/svg+xml" />
+		<link rel="stylesheet" href="style.css" />
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
-        <link rel="stylesheet" href="style.css">
-        <link rel="svg" href="pics/Canada-Flag.svg">
-        <link rel="icon" href="pics/Canada-Flag.svg" sizes="any"
-            type="image/svg+xml">
-        <title>Canadian Politicians - Crime</title>
-    </head>
+		<!-- dependencies -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 
-    <body>
-        <!-- JS source -->
-        <script src="script.js"></script>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
 
-        <div class="upperbody">
-            <h1 id="sitetitle" height="27px">
-                <embed src="pics/Canada-Flag.svg" id="canada-flag">
-                Crimes by Canadian Politicians
-            </h1>
+	<body>
+		<script src="script.js"></script>
 
-            <div class="attribution">
-                <p>
-                    <a
-                        href="https://docs.google.com/spreadsheets/d/1gof45QUi2p0f8YVaKa2fOgtIUBElSueh/htmlview">
-                        Data Source</a> | <a
-                        href="https://github.com/jeremy-friesen/can-pol-crimes">
-                        GitHub</a> | <a
-                        href="https://github.com/jeremy-friesen/can-pol-crimes/issues/new">
-                        Report Issue</a>
-                </p>
-            </div>
-            <div class="disclaimer-container">
-                <div class="disclaimer">
-                    <span class="warning-icon">
-                        <embed src="pics/Warning-Sign.svg">
-                    </span>
-                    <span>
-                        <p>
-                            <b>Work in progress.</b>
-                            Data may be incorrect or outdated.
-                            Please fact-check and <a
-                                href="https://github.com/jeremy-friesen/can-pol-crimes/issues/new">report
-                                issues</a>.
-                        </p>
-                    </span>
-                </div>
-            </div>
+		<div class="upperbody">
+			<h1 id="sitetitle" height="27px">
+				<embed src="pics/Canada-Flag.svg" id="canada-flag" />
+				Crimes by Canadian Politicians
+			</h1>
 
-            <div class="search-download-container">
+			<div class="attribution">
+				<p>
+					<a href="https://docs.google.com/spreadsheets/d/1gof45QUi2p0f8YVaKa2fOgtIUBElSueh/htmlview">
+						Data Source
+					</a>
+					| <a href="https://github.com/jeremy-friesen/can-pol-crimes">GitHub</a> |
+					<a href="https://github.com/jeremy-friesen/can-pol-crimes/issues/new">Report Issue</a>
+				</p>
+			</div>
 
-                <input type="text"
-                    id="search"
-                    placeholder="Search..."
-                    onkeyup="filterTable()" />
+			<div class="disclaimer-container">
+				<div class="disclaimer">
+					<span class="warning-icon">
+						<embed src="pics/Warning-Sign.svg" />
+					</span>
+					<span>
+						<p>
+							<b>Work in progress.</b>
+							Data may be incorrect or outdated. Please fact-check and
+							<a href="https://github.com/jeremy-friesen/can-pol-crimes/issues/new">report issues</a>.
+						</p>
+					</span>
+				</div>
+			</div>
 
-                <div class="download-dropdown">
-                    <button class="dropbtn">
-                        <svg width="24px"
-                            height="24px" stroke-width="1" viewBox="0 0 24 24"
-                            fill="none" xmlns="http://www.w3.org/2000/svg"
-                            color="#000000">
-                            <path d="M6 20L18 20" stroke="#000000"
-                                stroke-width="2.5" stroke-linecap="round"
-                                stroke-linejoin="round"></path><path
-                                d="M12 4V16M12 16L15.5 12.5M12 16L8.5 12.5"
-                                stroke="#000000" stroke-width="2.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round">
-                            </path>
-                        </svg>
-                        <b>Download</b>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="#" onclick="downloadTable('csv')">CSV</a>
-                        <a href="#" onclick="downloadTable('excel')">Excel</a>
-                        <a href="#" onclick="downloadTable('pdf')">PDF</a>
-                        <a
-                            href="https://github.com/jeremy-friesen/can-pol-crimes/archive/refs/heads/main.zip">Website
-                            .zip</a>
-                    </div>
-                </div>
+			<div class="search-download-container">
+				<input type="text" id="search" placeholder="Search..." onkeyup="filterTable()" />
 
-            </div>
+				<div class="download-dropdown">
+					<button class="dropbtn">
+						<svg
+							width="24px"
+							height="24px"
+							stroke-width="1"
+							viewBox="0 0 24 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							color="#000000"
+						>
+							<path
+								d="M6 20L18 20"
+								stroke="#000000"
+								stroke-width="2.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							></path>
+							<path
+								d="M12 4V16M12 16L15.5 12.5M12 16L8.5 12.5"
+								stroke="#000000"
+								stroke-width="2.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							></path>
+						</svg>
+						<b>Download</b>
+					</button>
+					<div class="dropdown-content">
+						<a href="#" onclick="downloadCSV()">CSV</a>
+						<a href="#" onclick="downloadExcel()">Excel</a>
+						<a href="#" onclick="downloadPDF(false)">PDF</a>
+						<a href="#" onclick="downloadPDF(true)">PDF w/ pictures</a>
+						<a href="https://github.com/jeremy-friesen/can-pol-crimes/archive/refs/heads/main.zip"
+							>Website .zip</a
+						>
+					</div>
+				</div>
+			</div>
 
-            <div class="table-container">
-                <table id="data-table">
-                    <thead>
-                        <tr id="header-row"></tr>
-                    </thead>
-                    <tbody id="data-body"></tbody>
-                </table>
-            </div>
+			<div class="table-container">
+				<table id="data-table">
+					<thead>
+						<tr id="header-row"></tr>
+					</thead>
+					<tbody id="data-body"></tbody>
+				</table>
+			</div>
 
-            <div id="charts" style="display: none;">
-                <br />
-                <br />
-                <h1>Charts</h1>
-                <div class="canvas-container">
-                    <canvas id="provinceChart" width="1000"
-                        height="600"></canvas>
-                </div>
-                <div class="canvas-container">
-                    <canvas id="partyChart" width="1000" height="600"></canvas>
-                </div>
-            </div>
+			<div id="charts" style="display: none">
+				<h1>Charts</h1>
+				<div class="canvas-container">
+					<canvas id="provinceChart" width="1000" height="600"></canvas>
+				</div>
+				<div class="canvas-container">
+					<canvas id="partyChart" width="1000" height="600"></canvas>
+				</div>
+			</div>
+		</div>
 
-        </div>
+		<footer class="footer">
+			<div class="footer-content">
+				<div class="footer-section sources">
+					<h3>Data Source</h3>
+					<ul>
+						<li>
+							Thanks to <a href="https://www.tiktok.com/@jonnylegato5">@jonnylegato5 on TikTok</a> for
+							compiling the
+							<a href="https://docs.google.com/spreadsheets/d/1gof45QUi2p0f8YVaKa2fOgtIUBElSueh/htmlview"
+								>original spreadsheet</a
+							>
+						</li>
+					</ul>
+				</div>
 
-        <footer class="footer">
-            <div class="footer-content">
+				<div class="footer-section contribute">
+					<h3>Contribute</h3>
+					<p>
+						Contribute, report issues, ask questions and more on the
+						<a href="https://github.com/jeremy-friesen/can-pol-crimes/">Project GitHub</a>.
+					</p>
+				</div>
 
-                <div class="footer-section sources">
-                    <h3>Data Source</h3>
-                    <ul>
-                        <li>Thanks to <a
-                                href="https://www.tiktok.com/@jonnylegato5">@jonnylegato5
-                                on TikTok</a> for compiling the <a
-                                href="https://docs.google.com/spreadsheets/d/1gof45QUi2p0f8YVaKa2fOgtIUBElSueh/htmlview">original
-                                spreadsheet</a></li>
-                    </ul>
-                </div>
+				<div class="footer-section sources">
+					<h3>Website Contributors</h3>
+					<ul>
+						<li><a href="https://github.com/jeremy-friesen">Jeremy Friesen</a></li>
+					</ul>
+				</div>
+			</div>
 
-                <div class="footer-section contribute">
-                    <h3>Contribute</h3>
-                    <p>Contribute, report issues, ask questions and more on the
-                        <a
-                            href="https://github.com/jeremy-friesen/can-pol-crimes/">Project
-                            GitHub</a>.</p>
-                </div>
-
-                <div class="footer-section sources">
-                    <h3>Website Contributors</h3>
-                    <ul>
-                        <li><a href="https://github.com/jeremy-friesen">Jeremy
-                                Friesen</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contribution Section -->
-            </div>
-
-            <!-- Copyright and Social Links -->
-            <div class="footer-bottom">
-                <p>This website is open-source with a <a
-                        href="https://github.com/jeremy-friesen/can-pol-crimes/blob/main/LICENSE.md">GNU
-                        GPLv3</a> license.</p>
-                <!-- <div class="social-links">
-                    <a href="#">GitHub</a>
-                </div> -->
-            </div>
-        </footer>
-    </body>
-
+			<div class="footer-bottom">
+				<p>
+					This website is open-source with a
+					<a href="https://github.com/jeremy-friesen/can-pol-crimes/blob/main/LICENSE.md">GNU GPLv3</a>
+					license.
+				</p>
+			</div>
+		</footer>
+	</body>
 </html>
