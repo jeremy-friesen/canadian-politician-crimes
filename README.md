@@ -33,7 +33,7 @@ This project is a compilation of data and visualizations about criminal charges 
 
 #### Anyone
 
--   [Suggest data additions](https://github.com/jeremy-friesen/can-pol-crimes/issues/new) for crimes that haven't been added yet.
+-   [Suggest data additions](https://github.com/jeremy-friesen/canadian-politician-crimes/issues/new) for crimes that haven't been added yet.
     -   When possible, please include:
     ```
     name:
@@ -45,13 +45,13 @@ This project is a compilation of data and visualizations about criminal charges 
     time in office:
     source:
     ```
--   [Report issues](https://github.com/jeremy-friesen/can-pol-crimes/issues/new), such as bugs or incorrect data.
--   [Suggest features](https://github.com/jeremy-friesen/can-pol-crimes/issues/new) or enhancements in design, accessibility, etc.
--   <button name="star button" action="/jeremy-friesen/can-pol-crimes/star">Star this repo</button> to boost the project's visibility.
+-   [Report issues](https://github.com/jeremy-friesen/canadian-politician-crimes/issues/new), such as bugs or incorrect data.
+-   [Suggest features](https://github.com/jeremy-friesen/canadian-politician-crimes/issues/new) or enhancements in design, accessibility, etc.
+-   [Star this repo](/jeremy-friesen/canadian-politician-crimes/star) to boost its visibility :)
 
 #### Programmers/Designers/etc
 
--   Check the [issues tab](https://github.com/jeremy-friesen/can-pol-crimes/issues) for bugs and feature requests.
+-   Check the [issues tab](https://github.com/jeremy-friesen/canadian-politician-crimes/issues) for bugs and feature requests.
 -   Check [Features and Future Work](#features-and-future-work) for feature ideas.
 
 ## Tech
@@ -64,8 +64,8 @@ Tools/Languages
 
 Hosting
 
-- This project is completely static files with client-side logic, so hosting is simple.
-- Currently hosting is done with GitHub pages.
+-   This project is made of up of static files and has only client-side code, so hosting is simple.
+-   Currently, hosting is done with GitHub pages.
 
 JS Dependencies
 
@@ -77,30 +77,31 @@ Data source formats
 
 -   JSON
     -   [Google Sheet](https://docs.google.com/spreadsheets/d/1gof45QUi2p0f8YVaKa2fOgtIUBElSueh/htmlview)
-    -   [party-colours.json](https://github.com/jeremy-friesen/can-pol-crimes/blob/main/data/party-colours.json)
+    -   [party-colours.json](https://github.com/jeremy-friesen/canadian-politician-crimes/blob/main/data/party-colours.json)
 -   CSV
-    -   [pics.txt](https://github.com/jeremy-friesen/can-pol-crimes/blob/main/data/pics.txt)
+    -   [pics.txt](https://github.com/jeremy-friesen/canadian-politician-crimes/blob/main/data/pics.txt)
 -   Supported picture formats
     -   JPEG
     -   PNG
     -   AVIF
     -   WEBP
 
-Output formats
+Download formats
 
 -   CSV
 -   Excel
 -   PDF
 
 ## Development
-- `git clone https://github.com/jeremy-friesen/can-pol-crimes.git`
-- `cd can-pol-crimes`
-- host HTTP file server
-    - with Python: `python3 -m http.server 8000`
-    - with Node.js: `npm install -g http-server`
-        - `http-server -p 8000`
-    - with VS Code "Live Server" extension:
-        - `code .`
-        - Extensions > search "Live Server" > install
-        - click "Live Server" on bottom right
-- in the browser, open `localhost:8000` or `localhost:5500` depending on your server
+
+-   `git clone https://github.com/jeremy-friesen/canadian-politician-crimes.git`
+-   `cd canadian-politician-crimes`
+-   host HTTP file server
+    -   with Python: `python3 -m http.server 8000`
+    -   with Node.js: `npm install -g http-server`
+        -   `http-server -p 8000`
+    -   with VS Code "Live Server" extension:
+        -   `code .`
+        -   Extensions > search "Live Server" > install
+        -   click "Live Server" on bottom right
+-   in the browser, open `localhost:XXXX`, depending on your port
