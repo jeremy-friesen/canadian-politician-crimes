@@ -61,17 +61,20 @@ fetch('data/party-colours.json')
 
 // takes party column text and returns list of relevant parties 
 function getPartyColours(partyText) {
-    return Object.keys(partyColours)
-        .filter(k => partyText.includes(k) && !(k === 'Independent'))
-        .map(k => {
-            partyText = partyText.replace(k, '');
-            return partyColours[k];
-        });
+    let colours = [];
+    let partyNames = Object.keys(partyColours).sort((a, b) => b.length - a.length);
+    for (let i = 0; i < partyNames.length; i++) {
+        if (partyText.includes(partyNames[i]) && !(partyNames[i] === 'Independent')) {
+            partyText = partyText.replace(partyNames[i], '');
+            colours.push(partyColours[partyNames[i]])
+        }
+    }
+    return colours;
 }
 
 // takes party column text and returns list of relevant parties 
 function fillParties(politician, partyText) {
-    var keys = Object.keys(partyColours);
+    var keys = Object.keys(partyColours).sort((a, b) => b.length - a.length);
     politician['partyCategories'] = []
     var t = partyText;
     for (let i = 0; i < keys.length; i++) {
